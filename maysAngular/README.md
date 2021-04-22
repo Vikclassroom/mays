@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## TODO  
+implémenter : (10%) Utilisation d’une solution standard  
+(10%) Logging  
+(20%) Gestion des utilisateurs  
+(20%) Gestion des rôles (public, utilisateur payant, admin, etc)  
+(40%) Pentest, tentatives d’accéder à la partie admin sans être admin, d’accéder aux données d’un autre utilisateur que soi, etc.
