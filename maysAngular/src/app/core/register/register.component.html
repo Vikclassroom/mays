@@ -1,6 +1,10 @@
 <form [formGroup]="form">
   <fieldset>
-    <legend>Login</legend>
+    <legend>Register</legend>
+    <div class="form-field">
+      <label>Name:</label>
+      <input name="name" formControlName="name">
+    </div>
     <div class="form-field">
       <label>Email:</label>
       <input name="email" formControlName="email">
@@ -13,7 +17,6 @@
   </fieldset>
   <div class="form-buttons">
     <button class="button button-primary"
-            (click)="login()">Login</button>
+            (click)="register()">register</button>
   </div>
 </form>
-
