@@ -30,6 +30,7 @@ export class AuthService {
       map((user: IUser) => {
         if (user) {
           localStorage.setItem('token', user.token);
+          this.router.navigateByUrl('');
         }
       })
     );
@@ -38,9 +39,9 @@ export class AuthService {
   // tslint:disable-next-line:typedef
   public register(name: string, email: string, password: string) {
     return this.http.post<IRegister>(this.baseUrl + 'auth/create', {name, email, password}).pipe(
-      map((created: IRegister) => {
-        if (created) {
-          this.login(email, password);
+      map((user: IRegister) => {
+        if (user) {
+          this.login(email, password).subscribe();
         }
       })
     );

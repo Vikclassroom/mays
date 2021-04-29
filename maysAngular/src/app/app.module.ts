@@ -9,13 +9,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './Interceptors/jwt.interceptor';
 import { RegisterComponent } from './core/register/register.component';
+import { PopComponent } from './core/pop/pop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PopComponent
   ],
   imports: [
     BrowserModule,
