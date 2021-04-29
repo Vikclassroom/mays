@@ -13,22 +13,22 @@ export class CoreService {
 
   // tslint:disable-next-line:typedef
   getAllPop() {
-    return this.http.get<IPop>(this.baseUrl + 'api/posts');
+    return this.http.get<IPop>(this.baseUrl + 'posts');
   }
 
   // tslint:disable-next-line:typedef
   postPop(values: any) {
-    return this.http.post<IPop>(this.baseUrl + 'api/posts', values);
+    return this.http.post<IPop>(this.baseUrl + 'posts', values);
   }
 
   // tslint:disable-next-line:typedef
   getPopById(values: any) {
-    return this.http.get<IPop>(this.baseUrl + 'api/posts', values);
+    return this.http.get<IPop>(this.baseUrl + 'posts', values);
   }
 
   // tslint:disable-next-line:typedef
   updatePop(values: any) {
-    return this.http.put<IPop>(this.baseUrl + 'api/posts', values);
+    return this.http.put<IPop>(this.baseUrl + 'posts', values);
   }
 
   // tslint:disable-next-line:typedef
