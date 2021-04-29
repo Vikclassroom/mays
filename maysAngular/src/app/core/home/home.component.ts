@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../guard/auth-service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  isAuthenticated: boolean;
 
-  constructor() { }
+  constructor(private service: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
+  isLogged() {
+    if (this.service.isAuthenticated === true){
+      return this.isAuthenticated === true;
+    }
+  }
 }
