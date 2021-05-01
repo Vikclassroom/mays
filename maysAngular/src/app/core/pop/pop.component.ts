@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IPop} from '../../model-interface/pop';
+import {CoreService} from '../core.service';
 
 @Component({
   selector: 'app-pop',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pop.component.scss']
 })
 export class PopComponent implements OnInit {
+  pops: IPop;
 
-  constructor() { }
+  constructor(private coreService: CoreService) { }
 
   ngOnInit(): void {
+    this.Pops();
   }
 
+  // tslint:disable-next-line:typedef
+  Pops() {
+    this.coreService.getAllPop().subscribe((pop: IPop) => {
+      this.pops = pop;
+      console.log(this.pops);
+    });
+  }
 }
