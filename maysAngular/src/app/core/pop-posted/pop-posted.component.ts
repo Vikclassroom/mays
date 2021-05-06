@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CoreService} from '../core.service';
 import {AuthService} from '../../guard/auth-service/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {PopService} from '../pop/pop.service';
 
 @Component({
   selector: 'app-pop-posted',
@@ -12,7 +12,7 @@ export class PopPostedComponent implements OnInit {
   popPosted: FormGroup;
   connected: boolean;
 
-  constructor(private coreService: CoreService, private auth: AuthService, private fb: FormBuilder) {
+  constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder) {
     this.popPosted = fb.group({
       title: ['', [Validators.required]],
       content: ['', [Validators.required]],
@@ -36,7 +36,7 @@ export class PopPostedComponent implements OnInit {
     console.log(user);
 
     if (user) {
-      this.coreService.postPop(this.popPosted.value).subscribe((data) => {
+      this.popService.postPop(this.popPosted.value).subscribe((data) => {
         console.log(data);
         console.log(this.popPosted);
       });
