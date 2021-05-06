@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../guard/auth-service/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PopService} from '../pop/pop.service';
+import {findLastMappingIndexBefore} from '@angular/compiler-cli/src/ngtsc/sourcemaps/src/source_file';
 
 @Component({
   selector: 'app-pop-posted',
@@ -16,8 +17,8 @@ export class PopPostedComponent implements OnInit {
     this.popPosted = fb.group({
       title: ['', [Validators.required]],
       content: ['', [Validators.required]],
-      file: [null],
-      isSpoiler: [null]
+      fileContent: [null],
+      isSpoiler: [false]
     });
 
 
@@ -36,7 +37,13 @@ export class PopPostedComponent implements OnInit {
     console.log(user);
 
     if (user) {
-      this.popService.postPop(this.popPosted.value).subscribe((data) => {
+      const content = this.popPosted.value.fileContent.match(/([^\\/]+)$/);
+      content.shift();
+      const name = content[0];
+      const form = this.popPosted.value;
+      Object.assign(form, {fileName: name});
+
+      this.popService.postPop(form).subscribe((data) => {
         console.log(data);
         console.log(this.popPosted);
       });
