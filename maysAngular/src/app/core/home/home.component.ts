@@ -15,8 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // tslint:disable-next-line:typedef
-  isLogged() {
+  isLogged(): boolean {
     if (this.service.isAuthenticated === true){
       console.log(this.isAuthenticated);
       return this.isAuthenticated === true;

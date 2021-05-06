@@ -1,9 +1,25 @@
-<form [formGroup]="popPosted" (ngSubmit)="popPost()">
-  <label for="title">Titre</label>
-  <input formControlName="title" type="text" id="title" name="title">
-  <label for="text">Texte</label>
-  <input formControlName="text" type="text" id="text" name="text">
-  <label for="file">Media</label>
-  <input formControlName="file" type="file" id="file" name="file">
-  <input type="submit" value="Publier">
-</form>
+<div *ngIf="connected">
+  <form [formGroup]="popPosted" (ngSubmit)="popPost()">
+    <p>
+
+    <div>
+      <label for="title">Titre</label>
+      <input formControlName="title" type="text" id="title" name="title">
+    </div>
+    <div>
+      <label for="content">Texte</label>
+      <textarea formControlName="content" type="text" id="content" name="content"></textarea>
+    </div>
+    <div>
+      <label for="file">Media</label>
+      <input formControlName="file" type="file" id="file" name="file">
+    </div>
+    <div>
+      <label for="ispoiler">is nsfw ?</label>
+      <input id="ispoiler" formControlName="isSpoiler" type="checkbox" value="Spoiler">
+    </div>
+    <div>
+      <input type="submit" value="Publier">
+    </div>
+  </form>
+</div>

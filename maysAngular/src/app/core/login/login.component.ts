@@ -12,8 +12,7 @@ import {AuthService} from '../../guard/auth-service/auth.service';
 export class LoginComponent implements OnInit {
   form: FormGroup;
 
-  // tslint:disable-next-line:variable-name
-  constructor(private core_service: CoreService,
+  constructor(private coreService: CoreService,
               private fb: FormBuilder,
               private authService: AuthService,
               private router: Router) {
@@ -27,8 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // tslint:disable-next-line:typedef
-  public login() {
+  public login(): void {
     const val = this.form.value;
 
     if (val.login && val.password) {

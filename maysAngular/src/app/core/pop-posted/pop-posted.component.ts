@@ -10,26 +10,36 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class PopPostedComponent implements OnInit {
   popPosted: FormGroup;
+  connected: boolean;
 
   constructor(private coreService: CoreService, private auth: AuthService, private fb: FormBuilder) {
     this.popPosted = fb.group({
       title: ['', [Validators.required]],
-      text: ['', [Validators.required]],
-      file: [null]
+      content: ['', [Validators.required]],
+      file: [null],
+      isSpoiler: [null]
     });
 
 
   }
 
   ngOnInit(): void {
+    if (this.auth.currentUser$ != null) {
+      this.connected = true;
+      console.log(this.connected);
+      console.log(this.auth.currentUser$);
+    }
   }
 
-  // tslint:disable-next-line:typedef
-  popPost() {
-    const user = this.auth.currentUser$;
+  popPost(): void {
+    const user = this.auth.isAuthenticated;
+    console.log(user);
 
     if (user) {
-      this.coreService.postPop(this.popPosted.value).subscribe();
+      this.coreService.postPop(this.popPosted.value).subscribe((data) => {
+        console.log(data);
+        console.log(this.popPosted);
+      });
     }
   }
 }
