@@ -11,6 +11,8 @@ import {JwtInterceptor} from './Interceptors/jwt.interceptor';
 import { RegisterComponent } from './core/register/register.component';
 import { PopComponent } from './core/pop/pop.component';
 import { PopPostedComponent } from './core/pop-posted/pop-posted.component';
+import { CommentsComponent } from './core/comments/comments.component';
+import { LikeComponent } from './core/like/like.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { PopPostedComponent } from './core/pop-posted/pop-posted.component';
     LoginComponent,
     RegisterComponent,
     PopComponent,
-    PopPostedComponent
+    PopPostedComponent,
+    CommentsComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
@@ -32,4 +36,5 @@ import { PopPostedComponent } from './core/pop-posted/pop-posted.component';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
