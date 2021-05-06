@@ -1,0 +1,9 @@
+<form [formGroup]="popPosted" (ngSubmit)="popPost()">
+  <label for="title">Titre</label>
+  <input formControlName="title" type="text" id="title" name="title">
+  <label for="text">Texte</label>
+  <input formControlName="text" type="text" id="text" name="text">
+  <label for="file">Media</label>
+  <input formControlName="file" type="file" id="file" name="file">
+  <input type="submit" value="Publier">
+</form>

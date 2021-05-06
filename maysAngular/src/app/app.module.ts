@@ -10,6 +10,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './Interceptors/jwt.interceptor';
 import { RegisterComponent } from './core/register/register.component';
 import { PopComponent } from './core/pop/pop.component';
+import { PopPostedComponent } from './core/pop-posted/pop-posted.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PopComponent } from './core/pop/pop.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    PopComponent
+    PopComponent,
+    PopPostedComponent
   ],
   imports: [
     BrowserModule,
