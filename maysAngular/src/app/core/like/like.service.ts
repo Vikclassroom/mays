@@ -24,10 +24,6 @@ export class LikeService {
     return this.http.post<ILike>(this.baseUrl + 'like', values);
   }
 
-  updateLike(values: any): Observable<ILike> {
-    return this.http.put<ILike>(this.baseUrl + 'like', values);
-  }
-
   deleteLike(values: any): Observable<HttpEvent<ILike>> {
     return this.http.delete<ILike>(this.baseUrl + 'like', values);
   }

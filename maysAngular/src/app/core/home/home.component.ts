@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
       return this.isAuthenticated === true;
     }
   }
+
+  logout(): void {
+    this.service.logout();
+  }
 }

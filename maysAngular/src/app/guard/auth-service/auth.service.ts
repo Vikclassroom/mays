@@ -30,6 +30,7 @@ export class AuthService {
         if (user) {
           localStorage.setItem('token', user.token);
           this.router.navigateByUrl('');
+          console.log(this.isAuthenticated);
         }
       })
     );

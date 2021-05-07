@@ -1,1 +1,4 @@
-<p>like works!</p>
+<form [formGroup]="likeForm">
+    <label for="postId">Like</label>
+    <input formControlName="postId" id="postId" type="checkbox" (change)="onChangeLike()">
+</form>

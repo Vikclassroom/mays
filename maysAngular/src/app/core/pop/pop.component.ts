@@ -13,7 +13,7 @@ export class PopComponent implements OnInit {
   constructor(private popService: PopService) { }
 
   ngOnInit(): void {
-    this.Pops();
+    // this.Pops();
   }
 
   // tslint:disable-next-line:typedef
