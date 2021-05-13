@@ -34,13 +34,14 @@ export class PopPostedComponent implements OnInit {
     const user = this.auth.isAuthenticated;
 
     if (user) {
-
       const content = this.popPosted.value.fileContent.match(/([^\\/]+)$/);
       content.shift();
       const name = content[0];
       const form = this.popPosted.value;
       Object.assign(form, {fileName: name});
-      form.fileContent = this.fileB64;
+      const str = this.fileB64;
+      form.fileContent = str.substring(str.indexOf(',') + 1);
+      // form.fileContent = this.fileB64;
       this.popService.postPop(form).subscribe((data) => {
         console.log(this.popPosted);
       });
