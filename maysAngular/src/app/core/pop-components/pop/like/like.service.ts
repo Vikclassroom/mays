@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpEvent} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
+import {environment} from '../../../../../environments/environment';
 import {Observable} from 'rxjs';
-import {ILike} from '../../model-interface/like';
+import {ILike} from '../../../../model-interface/like';
 
 @Injectable({
   providedIn: 'root'

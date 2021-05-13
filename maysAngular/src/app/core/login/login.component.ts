@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
       this.authService.login(val.login, val.password)
         .subscribe(
           () => {
-            console.log('L\'utilisateur est connecté');
             this.router.navigateByUrl('/');
           }
         );

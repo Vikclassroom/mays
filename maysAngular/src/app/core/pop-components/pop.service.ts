@@ -12,8 +12,8 @@ export class PopService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPop(): Observable<IPop> {
-    return this.http.get<IPop>(this.baseUrl + 'posts');
+  getAllPop(): Observable<Array<IPop>> {
+    return this.http.get<Array<IPop>>(this.baseUrl + 'posts');
   }
 
   postPop(values: any): Observable<IPop> {

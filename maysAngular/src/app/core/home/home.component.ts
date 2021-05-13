@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../guard/auth-service/auth.service';
 
 @Component({
@@ -9,15 +9,14 @@ import {AuthService} from '../../guard/auth-service/auth.service';
 export class HomeComponent implements OnInit {
   isAuthenticated: boolean;
 
-
-  constructor(private service: AuthService) { }
+  constructor(private service: AuthService) {
+  }
 
   ngOnInit(): void {
   }
 
   isLogged(): boolean {
-    if (this.service.isAuthenticated === true){
-      console.log(this.isAuthenticated);
+    if (this.service.isAuthenticated === true) {
       return this.isAuthenticated === true;
     }
   }

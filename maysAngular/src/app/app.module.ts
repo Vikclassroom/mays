@@ -9,10 +9,11 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {JwtInterceptor} from './Interceptors/jwt.interceptor';
 import { RegisterComponent } from './core/register/register.component';
-import { PopComponent } from './core/pop/pop.component';
-import { PopPostedComponent } from './core/pop-posted/pop-posted.component';
-import { CommentsComponent } from './core/comments/comments.component';
-import { LikeComponent } from './core/like/like.component';
+import { PopComponent } from './core/pop-components/pop/pop.component';
+import { PopPostedComponent } from './core/pop-components/pop-posted/pop-posted.component';
+import { CommentsComponent } from './core/pop-components/comments/comments.component';
+import { LikeComponent } from './core/pop-components/pop/like/like.component';
+import { PopComponentsComponent } from './core/pop-components/pop-components.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LikeComponent } from './core/like/like.component';
     PopComponent,
     PopPostedComponent,
     CommentsComponent,
-    LikeComponent
+    LikeComponent,
+    PopComponentsComponent
   ],
   imports: [
     BrowserModule,

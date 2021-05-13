@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {LikeService} from './like.service';
-import {AuthService} from '../../guard/auth-service/auth.service';
+import {AuthService} from '../../../../guard/auth-service/auth.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {PopService} from '../pop/pop.service';
+import {PopService} from '../../pop.service';
 
 @Component({
   selector: 'app-like',
@@ -12,28 +12,22 @@ import {PopService} from '../pop/pop.service';
 export class LikeComponent implements OnInit {
   eventBox: boolean;
   likeForm: FormGroup;
+  @Input() postId: string;
+  id: string;
 
   constructor(private likeService: LikeService, private auth: AuthService, private fb: FormBuilder, private popService: PopService) {
     this.likeForm = this.fb.group({
-      postId: ['']
+      id: ['']
     });
   }
 
-
   ngOnInit(): void {
-    // this.likeService.getAllLike().subscribe();
+    this.likeForm.controls.id.setValue(this.postId);
   }
 
   onChangeLike(): void  {
     if (this.auth.isAuthenticated) {
-      this.eventBox = this.likeForm.value.postId;
-      if (this.eventBox === true) {
-        // post
-        console.log(this.eventBox);
-      } else {
-        // delete
-        console.log(this.eventBox);
-      }
+      console.log('ok');
     }
   }
 }
