@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 export class AuthService {
   public baseUrl = environment.apiUrl;
   private currentUserSource: ReplaySubject<IUser> = new ReplaySubject<IUser>(null);
-  currentUser$ = this.currentUserSource.asObservable();
+  public currentUser$ = this.currentUserSource.asObservable();
   isAuthenticated = false;
 
   constructor(private http: HttpClient, private router: Router) {

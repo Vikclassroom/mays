@@ -1,3 +1,5 @@
-<app-pop-posted *ngIf="connected === true"></app-pop-posted>
+<div *ngIf="connected !== false">
+  <app-pop-posted></app-pop-posted>
+</div>
 <app-pop *ngFor="let pop of pops" [pop]="pop"></app-pop>
 

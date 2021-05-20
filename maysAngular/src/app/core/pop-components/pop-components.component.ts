@@ -16,9 +16,11 @@ export class PopComponentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.Pops();
-    if (this.auth.currentUser$ != null) {
-      this.connected = true;
-    }
+    setInterval(this.isSleep, 1000);
+  }
+
+  isSleep(): void {
+    this.connected = this.auth.currentUser$ != null;
   }
 
   Pops(): void {
