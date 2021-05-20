@@ -1,5 +1,5 @@
 <div *ngIf="connected !== false">
-  <app-pop-posted></app-pop-posted>
+  <app-pop-posted (InitAfterPost)="Pops()"></app-pop-posted>
 </div>
 <app-pop *ngFor="let pop of pops" [pop]="pop"></app-pop>
 

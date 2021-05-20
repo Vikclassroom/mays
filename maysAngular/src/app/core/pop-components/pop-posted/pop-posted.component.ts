@@ -11,7 +11,7 @@ import {PopService} from '../pop.service';
 export class PopPostedComponent implements OnInit {
   popPosted: FormGroup;
   connected: boolean;
-  @Output() readonly InitAfterPost = new EventEmitter<Event>();
+  @Output() readonly InitAfterPost = new EventEmitter();
   private fileB64: string;
 
   constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder) {
@@ -42,17 +42,15 @@ export class PopPostedComponent implements OnInit {
         form.fileContent = str.substring(str.indexOf(',') + 1);
         this.popService.postPop(form).subscribe((data) => {
           console.log(this.popPosted);
+          this.InitAfterPost.emit();
         });
       } else {
         this.popService.postPop(this.popPosted.value).subscribe((data) => {
           console.log(this.popPosted);
+          this.InitAfterPost.emit();
         });
       }
     }
-  }
-
-  reignite(): void {
-    this.InitAfterPost.emit(event);
   }
 
   onTheFly(event): void {

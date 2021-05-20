@@ -16,7 +16,7 @@ export class PopComponentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.Pops();
-    setInterval(this.isSleep, 1000);
+    // setInterval(this.isSleep, 1000);
   }
 
   isSleep(): void {
