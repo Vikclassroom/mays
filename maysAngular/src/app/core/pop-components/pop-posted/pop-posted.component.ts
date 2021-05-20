@@ -24,7 +24,7 @@ export class PopPostedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.auth.currentUser$ != null) {
+    if (this.auth.isAuthenticated !== false) {
       this.connected = true;
     }
   }
@@ -41,12 +41,10 @@ export class PopPostedComponent implements OnInit {
         const str = this.fileB64;
         form.fileContent = str.substring(str.indexOf(',') + 1);
         this.popService.postPop(form).subscribe((data) => {
-          console.log(this.popPosted);
           this.InitAfterPost.emit();
         });
       } else {
         this.popService.postPop(this.popPosted.value).subscribe((data) => {
-          console.log(this.popPosted);
           this.InitAfterPost.emit();
         });
       }
@@ -54,7 +52,6 @@ export class PopPostedComponent implements OnInit {
   }
 
   onTheFly(event): void {
-    console.log(event);
     this.toBase64(event.target.files[0]).then(fileB => {
       this.fileB64 = fileB;
     });

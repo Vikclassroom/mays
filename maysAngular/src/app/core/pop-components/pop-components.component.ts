@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IPop} from '../../model-interface/pop';
 import {PopService} from './pop.service';
 import {AuthService} from '../../guard/auth-service/auth.service';
@@ -10,17 +10,14 @@ import {AuthService} from '../../guard/auth-service/auth.service';
 })
 export class PopComponentsComponent implements OnInit {
   pops: Array<IPop>;
-  connected: boolean;
+  isAuth: boolean;
+  public connected: boolean = this.auth.isAuthenticated;
 
   constructor(private popService: PopService,  private auth: AuthService) { }
 
   ngOnInit(): void {
     this.Pops();
-    // setInterval(this.isSleep, 1000);
-  }
-
-  isSleep(): void {
-    this.connected = this.auth.currentUser$ != null;
+    this.auth.isAuth$.subscribe(isAuth => this.isAuth = isAuth);
   }
 
   Pops(): void {
@@ -28,5 +25,4 @@ export class PopComponentsComponent implements OnInit {
       this.pops = pop;
     });
   }
-
 }

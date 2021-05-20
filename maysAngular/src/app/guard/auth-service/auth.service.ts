@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 import {IRegister} from '../../model-interface/register';
-import {Observable, ReplaySubject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {Router} from '@angular/router';
 
 @Injectable({
@@ -12,9 +12,9 @@ import {Router} from '@angular/router';
 })
 export class AuthService {
   public baseUrl = environment.apiUrl;
-  private currentUserSource: ReplaySubject<IUser> = new ReplaySubject<IUser>(null);
-  public currentUser$ = this.currentUserSource.asObservable();
   isAuthenticated = false;
+  private isAuthSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public isAuth$: Observable<boolean> = this.isAuthSubject.asObservable();
 
   constructor(private http: HttpClient, private router: Router) {
     const token = localStorage.getItem('token');
@@ -29,7 +29,9 @@ export class AuthService {
       map((user: IUser) => {
         if (user) {
           localStorage.setItem('token', user.token);
-          this.router.navigateByUrl('');
+          this.isAuthSubject.next(true);
+          this.isAuthenticated = true;
+          this.router.navigateByUrl('/');
         }
       })
     );
@@ -47,7 +49,8 @@ export class AuthService {
 
   public logout(): void {
     localStorage.removeItem('token');
-    this.currentUserSource.next(null);
     this.router.navigateByUrl('/');
+    this.isAuthenticated = false;
+    this.isAuthSubject.next(false);
   }
 }
