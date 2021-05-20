@@ -34,7 +34,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/files/build/script.js"
+              "src/assets/build/script.js"
             ]
           },
           "configurations": {
