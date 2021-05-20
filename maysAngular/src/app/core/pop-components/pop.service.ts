@@ -29,6 +29,6 @@ export class PopService {
   }
 
   deletePop(values: any): Observable<HttpEvent<IPop>> {
-    return this.http.delete<IPop>(this.baseUrl + 'api/posts', values);
+    return this.http.delete<IPop>(this.baseUrl + 'posts', values);
   }
 }
