@@ -1,4 +1,9 @@
-<form [formGroup]="likeForm">
-    <label for="id" (click)="onChangeLike()">Like</label>
+<form [formGroup]="likeForm" class="box-like px-3 py-1">
+    <label for="id" (click)="onChangeLike()" class="like-btn unliked">Like</label>
     <input formControlName="id" id="id" type="hidden">
 </form>
+<!--
+<div class="box-like px-3 py-1">
+  <p class="mb-0 mr-2">361</p>
+  <div class="like-btn unliked"></div>
+</div>-->

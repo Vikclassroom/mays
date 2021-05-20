@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<div id="app">
+  <div class="container mt-3">
+    <header class="header post">
+      <nav class="navbar navbar-expand-xl navbar-light">
+        <a class="navbar-brand" routerLinkActive="active" routerLink="">MAŸS</a>
+
+        <div class="navbar-nav ml-auto">
+            <a routerLinkActive="active" routerLink="core/login" class="nav-link">Se connecter</a>
+            <a routerLinkActive="active" routerLink="core/register" class="nav-link">S'inscrire</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <main role="main" class="py-5">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
