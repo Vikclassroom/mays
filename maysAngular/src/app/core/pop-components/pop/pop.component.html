@@ -1,9 +1,11 @@
 <div class="post mb-5 p-4">
-  <a href="#" class="pseudo premium">{{pop.author}}</a> · <small class="text-black-50" title="29.04.2021 13:19">il y a 3 minutes</small>
+  <a href="#" class="pseudo premium">{{pop.author.userName}}</a> · <small class="text-black-50"
+                                                                          title="29.04.2021 13:19">il y a 3
+  minutes</small>
   <h4>{{pop.title}}</h4>
   <p>{{pop.content}}</p>
   <p>{{pop.fileName}}</p>
-  <p>{{pop.fileContent}}</p>
+  <img src="http://localhost:5000/assets/{{pop.filePath}}" alt="">
   <p>spoiler ? {{pop.isSpoiler}}</p>
 
 

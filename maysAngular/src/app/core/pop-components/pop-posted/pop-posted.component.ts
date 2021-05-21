@@ -24,8 +24,6 @@ export class PopPostedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    console.log(this);
   }
 
   popPost(): void {
@@ -39,11 +37,14 @@ export class PopPostedComponent implements OnInit {
         Object.assign(form, {fileName: name});
         const str = this.fileB64;
         form.fileContent = str.substring(str.indexOf(',') + 1);
+        console.log(form);
         this.popService.postPop(form).subscribe((data) => {
+          console.log(data);
           this.InitAfterPost.emit();
         });
       } else {
         this.popService.postPop(this.popPosted.value).subscribe((data) => {
+          console.log(data);
           this.InitAfterPost.emit();
         });
       }

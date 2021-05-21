@@ -8,4 +8,5 @@ export interface IPop {
   fileName: string;
   fileContent: string;
   isSpoiler: boolean;
+  filePath: string;
 }
