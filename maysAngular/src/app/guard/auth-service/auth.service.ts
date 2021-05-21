@@ -21,6 +21,7 @@ export class AuthService {
     if (!token) {
       return;
     }
+    this.isAuthSubject.next(true);
     this.isAuthenticated = true;
   }
 

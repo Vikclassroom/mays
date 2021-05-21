@@ -10,23 +10,22 @@ import {PopService} from '../pop.service';
 })
 export class PopPostedComponent implements OnInit {
   popPosted: FormGroup;
-  connected: boolean;
+  connected: boolean = this.auth.isAuthenticated;
   @Output() readonly InitAfterPost = new EventEmitter();
   private fileB64: string;
 
   constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder) {
     this.popPosted = fb.group({
       title: ['', [Validators.required]],
-      content: ['', [Validators.required]],
+      content: [''],
       fileContent: [null],
       isSpoiler: [false]
     });
   }
 
   ngOnInit(): void {
-    if (this.auth.isAuthenticated !== false) {
-      this.connected = true;
-    }
+
+    console.log(this);
   }
 
   popPost(): void {
@@ -64,5 +63,9 @@ export class PopPostedComponent implements OnInit {
       reader.onload = () => resolve(reader.result as string);
       reader.onerror = error => reject(error);
     });
+  }
+
+  closeCollapse(): void {
+    document.getElementById('collapse').click();
   }
 }
