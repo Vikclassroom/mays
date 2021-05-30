@@ -17,7 +17,9 @@ export class PopComponentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.Pops();
-    this.auth.isAuth$.subscribe(isAuth => this.isAuth = isAuth);
+    this.auth.isAuth$.subscribe(isAuth => {
+      this.isAuth = isAuth;
+    });
   }
 
   Pops(): void {

@@ -39,9 +39,9 @@ import {JWT_OPTIONS, JwtHelperService} from '@auth0/angular-jwt';
     HttpClientModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}/*,
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
-    JwtHelperService
+    JwtHelperService */
   ],
   bootstrap: [AppComponent]
 })

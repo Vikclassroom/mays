@@ -6,7 +6,6 @@ import {environment} from '../../../environments/environment';
 import {IRegister} from '../../model-interface/register';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {Router} from '@angular/router';
-import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +14,14 @@ export class AuthService {
   public baseUrl = environment.apiUrl;
   private isAuthSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public isAuth$: Observable<boolean> = this.isAuthSubject.asObservable();
+  isConnected: boolean;
 
-  constructor(private http: HttpClient, private router: Router, public jwtHelper: JwtHelperService) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   public isAuthenticated(): boolean {
     const token = localStorage.getItem('token');
-    return !this.jwtHelper.isTokenExpired(token);
+    this.isAuthSubject.next(!!token);
+    return !!token;
   }
 
   public login(input: string, password: string): Observable<void> {
