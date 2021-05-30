@@ -30,7 +30,7 @@ export class AccountService {
 
   updateUserAvatar(values: any): Observable<IUserAccount> {
     if (this.auth) {
-      return this.http.put<IUserAccount>(this.baseUrl + 'user', values);
+      return this.http.put<IUserAccount>(this.baseUrl + 'user/avatar', values);
     }
   }
 }

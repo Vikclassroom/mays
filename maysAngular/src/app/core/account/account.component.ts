@@ -52,11 +52,10 @@ export class AccountComponent implements OnInit {
       const str = this.fileB64;
       Object.assign(form, {fileContent: str.substring(str.indexOf(',') + 1)});
       console.log(form);
-      // this.service.updateUserAvatar(form).subscribe((data) => {
-        // this.InitAfterPost.emit();
-      // });
+      this.service.updateUserAvatar(form).subscribe((data) => {
+
+      });
     }
-    // this.service.updateUserAvatar(form).subscribe();
   }
 
   public onTheFly(event): void {

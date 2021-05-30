@@ -1,10 +1,12 @@
 <form [formGroup]="avatarForm">
   <div class="form-group">
-    <input type="file" id="avatar" name="avatar" formControlName="avatar" (click)="onTheFly($event)">
+    <input type="file" id="avatar" formControlName="avatar" (change)="onTheFly($event)">
   </div>
   <button (click)="updateAvatar()" class="btn btn-primary">Enregistrer</button>
 </form>
+
 <p></p>
+
 <form [formGroup]="userInformation">
   <div class="form-group">
     <label for="password">Changer le mot de passe</label>

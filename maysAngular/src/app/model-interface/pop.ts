@@ -9,4 +9,5 @@ export interface IPop {
   fileContent: string;
   isSpoiler: boolean;
   filePath: string;
+  fileType: string;
 }
