@@ -7,7 +7,6 @@ import {AuthService} from '../../guard/auth-service/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  isAuthenticated: boolean;
 
   constructor(private service: AuthService) {
   }
@@ -16,12 +15,6 @@ export class HomeComponent implements OnInit {
   }
 
   isLogged(): boolean {
-    if (this.service.isAuthenticated === true) {
-      return this.isAuthenticated === true;
-    }
-  }
-
-  logout(): void {
-    this.service.logout();
+    return this.service.isAuthenticated();
   }
 }

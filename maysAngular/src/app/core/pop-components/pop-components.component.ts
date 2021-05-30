@@ -10,7 +10,7 @@ import {AuthService} from '../../guard/auth-service/auth.service';
 })
 export class PopComponentsComponent implements OnInit {
   pops: Array<IPop>;
-  isAuth: boolean = this.auth.isAuthenticated;
+  isAuth: boolean = this.auth.isAuthenticated();
   public contentType: string;
 
   constructor(private popService: PopService,  private auth: AuthService) { }

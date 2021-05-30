@@ -14,6 +14,9 @@ import { PopPostedComponent } from './core/pop-components/pop-posted/pop-posted.
 import { CommentsComponent } from './core/pop-components/comments/comments.component';
 import { LikeComponent } from './core/pop-components/pop/like/like.component';
 import { PopComponentsComponent } from './core/pop-components/pop-components.component';
+import { AccountComponent } from './core/account/account.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import {JWT_OPTIONS, JwtHelperService} from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { PopComponentsComponent } from './core/pop-components/pop-components.com
     PopPostedComponent,
     CommentsComponent,
     LikeComponent,
-    PopComponentsComponent
+    PopComponentsComponent,
+    AccountComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,9 @@ import { PopComponentsComponent } from './core/pop-components/pop-components.com
     HttpClientModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })

@@ -23,8 +23,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-// tslint:disable-next-line:typedef
-  public register() {
+
+  public register(): void {
     const val = this.form.value;
 
     if (val.name && val.email && val.password) {
