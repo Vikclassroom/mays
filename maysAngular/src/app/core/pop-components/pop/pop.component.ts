@@ -8,10 +8,15 @@ import {IPop} from '../../../model-interface/pop';
 })
 export class PopComponent implements OnInit {
   @Input() pop: IPop;
+  blur = true;
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  onShow(): void {
+    this.blur = false;
   }
 }

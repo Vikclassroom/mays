@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AccountService} from './account.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {confirmPassword} from './confirmPassword';
 
 @Component({
   selector: 'app-account',
@@ -14,10 +15,12 @@ export class AccountComponent implements OnInit {
 
   constructor(private service: AccountService, private fb: FormBuilder) {
     this.userInformation = this.fb.group({
-      username: ['' , Validators.required],
-      email: ['', Validators.required],
-      confirmEmail: ['', Validators.required]
-    });
+        password: ['', Validators.required],
+        confirmPassword: ['', Validators.required]
+      },
+      {
+        validator: confirmPassword('password', 'confirmPassword')
+      });
 
     this.avatarForm = this.fb.group({
       avatar: [null, Validators.required]
@@ -32,23 +35,37 @@ export class AccountComponent implements OnInit {
     this.service.getUserInformation().subscribe();
   }
 
-  public updateInformation(): void {
+  public updatePassword(): void {
     const form = this.userInformation;
     this.service.updateUserInformation(form).subscribe();
   }
 
   public updateAvatar(): void {
-    const form = this.avatarForm;
-    this.service.updateUserAvatar(form).subscribe();
+    const isFile = this.avatarForm.value.avatar;
+    console.log(isFile);
+    if (isFile !== null) {
+      const content = isFile.match(/([^\\/]+)$/);
+      content.shift();
+      const name = content[0];
+      const form = this.avatarForm.value;
+      Object.assign(form, {fileName: name});
+      const str = this.fileB64;
+      Object.assign(form, {fileContent: str.substring(str.indexOf(',') + 1)});
+      console.log(form);
+      // this.service.updateUserAvatar(form).subscribe((data) => {
+        // this.InitAfterPost.emit();
+      // });
+    }
+    // this.service.updateUserAvatar(form).subscribe();
   }
 
-  onTheFly(event): void {
+  public onTheFly(event): void {
     this.toBase64(event.target.files[0]).then(fileB => {
       this.fileB64 = fileB;
     });
   }
 
-  toBase64(file): Promise<string> {
+  public toBase64(file): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -61,25 +78,7 @@ export class AccountComponent implements OnInit {
 /*
 
 popPost(): void {
-    if (this.connected) {
-      const isFile = this.popPosted.value.fileContent;
-      if (isFile !== null) {
-        const content = this.popPosted.value.fileContent.match(/([^\\/]+)$/);
-        content.shift();
-        const name = content[0];
-        const form = this.popPosted.value;
-        Object.assign(form, {fileName: name});
-        const str = this.fileB64;
-        form.fileContent = str.substring(str.indexOf(',') + 1);
-        this.popService.postPop(form).subscribe((data) => {
-          this.InitAfterPost.emit();
-        });
-      } else {
-        this.popService.postPop(this.popPosted.value).subscribe((data) => {
-          this.InitAfterPost.emit();
-        });
-      }
-    }
+
   }
 
 
