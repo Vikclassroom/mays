@@ -14,7 +14,6 @@ export class AuthService {
   public baseUrl = environment.apiUrl;
   private isAuthSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public isAuth$: Observable<boolean> = this.isAuthSubject.asObservable();
-  isConnected: boolean;
 
   constructor(private http: HttpClient, private router: Router) {}
 
