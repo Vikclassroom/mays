@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {IPop} from '../../model-interface/pop';
-import {HttpClient, HttpEvent} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 
 @Injectable({
@@ -20,15 +20,15 @@ export class PopService {
     return this.http.post<IPop>(this.baseUrl + 'posts', values);
   }
 
-  getPopById(values: any): Observable<HttpEvent<IPop>> {
-    return this.http.get<IPop>(this.baseUrl + 'posts', values);
+  getPopById(id: any): Observable<IPop> {
+    return this.http.get<IPop>(this.baseUrl + 'posts/' + id);
   }
 
-  updatePop(values: any): Observable<IPop> {
-    return this.http.put<IPop>(this.baseUrl + 'posts', values);
+  updatePop(id: any, values: any): Observable<IPop> {
+    return this.http.put<IPop>(this.baseUrl + 'posts/' + id, values);
   }
 
-  deletePop(values: any): Observable<HttpEvent<IPop>> {
-    return this.http.delete<IPop>(this.baseUrl + 'posts', values);
+  deletePop(id: any): Observable<IPop> {
+    return this.http.delete<IPop>(this.baseUrl + 'posts/' + id);
   }
 }

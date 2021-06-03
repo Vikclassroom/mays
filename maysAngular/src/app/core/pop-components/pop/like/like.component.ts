@@ -25,9 +25,17 @@ export class LikeComponent implements OnInit {
     this.likeForm.controls.id.setValue(this.postId);
   }
 
-  onChangeLike(): void  {
+  onChangeLike(): void {
     if (this.auth.isAuthenticated) {
-      console.log('ok');
+      const id = this.likeForm.value.id;
+      console.log(id);
+      // const linkLike = this.
+     /* this.likeService.postLike(id).subscribe((likedPop) => {
+
+      });
+*/
+      // const form =
+      // this.likeService.postLike(form).subscribe();
     }
   }
 }

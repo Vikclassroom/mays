@@ -16,6 +16,7 @@ import { LikeComponent } from './core/pop-components/pop/like/like.component';
 import { PopComponentsComponent } from './core/pop-components/pop-components.component';
 import { AccountComponent } from './core/account/account.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { AddCommentComponent } from './core/pop-components/add-comment/add-comment.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     LikeComponent,
     PopComponentsComponent,
     AccountComponent,
-    NavBarComponent
+    NavBarComponent,
+    AddCommentComponent
   ],
   imports: [
     BrowserModule,

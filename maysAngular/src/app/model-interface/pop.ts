@@ -11,4 +11,5 @@ export interface IPop {
   isSpoiler: boolean;
   filePath: string;
   fileType: string;
+  isLiked: boolean;
 }
