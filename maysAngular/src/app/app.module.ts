@@ -16,8 +16,6 @@ import { LikeComponent } from './core/pop-components/pop/like/like.component';
 import { PopComponentsComponent } from './core/pop-components/pop-components.component';
 import { AccountComponent } from './core/account/account.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import {JWT_OPTIONS, JwtHelperService} from '@auth0/angular-jwt';
-import {MomentModule} from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -40,9 +38,7 @@ import {MomentModule} from 'ngx-moment';
     HttpClientModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}/*,
-    {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
-    JwtHelperService */
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
