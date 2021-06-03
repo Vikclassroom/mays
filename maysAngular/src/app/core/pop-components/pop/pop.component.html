@@ -1,9 +1,7 @@
 <div class="post mb-5 p-4">
   <img src="http://localhost:5000/avatars/{{pop.author.avatar}}" alt="profilPicture" style="width: 100px"><a href="#"
                                                                                                              class="pseudo premium">{{pop.author.userName}}</a>
-  · <small class="text-black-50"
-           title="29.04.2021 13:19">il y a 3
-  minutes</small>
+  · <small class="text-black-50" title="{{title}}">{{time}}</small>
 
   <h4>{{pop.title}}</h4>
   <div class="contentBox">
@@ -14,11 +12,10 @@
       <video *ngIf="pop.fileType == 'video'" src="http://localhost:5000/assets/{{pop.filePath}}"></video>
       <audio *ngIf="pop.fileType == 'audio'" src="http://localhost:5000/assets/{{pop.filePath}}"></audio>
     </div>
-    <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="pop.isSpoiler && blur">Afficher le contenu
+    <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="pop.isSpoiler && blur">Afficher le contenu NSFW
     </button>
   </div>
   <app-like [postId]="pop.id"></app-like>
-<div>{{pop.fileType}}</div>
   <div class="box-comments px-3 py-1">
     <p class="text-center"><a href="#">Voir les commentaires</a></p>
   </div>

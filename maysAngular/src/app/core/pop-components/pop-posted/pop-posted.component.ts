@@ -39,7 +39,7 @@ export class PopPostedComponent implements OnInit {
         console.log(form);
         Object.assign(form, {fileName: name});
         const str = this.fileB64;
-        form.fileContent = str; // .substring(str.indexOf(',') + 1);
+        form.fileContent = str.substring(str.indexOf(',') + 1);
         this.popService.postPop(form).subscribe((data) => {
           this.InitAfterPost.emit();
         });
