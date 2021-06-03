@@ -16,11 +16,13 @@
       </div>
       <div class="form-group">
         <label for="fileContent">Media</label>
-        <input formControlName="fileContent" type="file" id="fileContent" name="fileContent" (change)="onTheFly($event)">
+        <input class="form-control-file" formControlName="fileContent" type="file" id="fileContent" name="fileContent" (change)="onTheFly($event)">
       </div>
-      <div class="form-check">
-        <input formControlName="isSpoiler" class="form-check-input" type="checkbox" value="Spoiler" id="ispoiler">
-        <label class="form-check-label" for="ispoiler">NSFW</label>
+      <div class="form-group">
+        <div class="form-check">
+          <input formControlName="isSpoiler" class="form-check-input" type="checkbox" value="Spoiler" id="ispoiler">
+          <label class="form-check-label" for="ispoiler">Spoiler</label>
+        </div>
       </div>
       <button type="submit" class="btn btn-primary" (click)="closeCollapse()">Publier</button>
     </form>
