@@ -1,6 +1,7 @@
 <div class="post mb-5 p-4">
   <a href="#" class="pseudo premium">
-    <img src="http://localhost:5000/avatars/{{pop.author.avatar}}" alt="profilPicture">
+    <img *ngIf="pop.author.avatar !== null" src="http://localhost:5000/avatars/{{pop.author.avatar}}" alt="profilPicture">
+    <img *ngIf="pop.author.avatar === null" src="http://localhost:4200/assets/build/defaultuser.png" alt="profilPicture">
     {{pop.author.userName}}
   </a> · <small class="text-black-50" title="{{title}}">{{time}}</small>
 
