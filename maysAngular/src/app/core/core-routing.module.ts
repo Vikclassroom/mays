@@ -4,6 +4,7 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {AccountComponent} from './account/account.component';
 import {AuthGuard} from '../guard/auth.guard';
+import {PremiumComponent} from "./premium/premium.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -11,6 +12,11 @@ const routes: Routes = [
   {
     path: 'account',
     component: AccountComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'premium',
+    component: PremiumComponent,
     canActivate: [AuthGuard]
   }
 ];

@@ -7,6 +7,7 @@
     <a routerLinkActive="active" routerLink="core/login" class="nav-link" *ngIf="!isLogged()">Se connecter</a>
     <a routerLinkActive="active" routerLink="core/register" class="nav-link" *ngIf="!isLogged()">S'inscrire</a>
     <a routerLinkActive="active" routerLink="core/account" class="nav-link" *ngIf="isLogged()">Mon Compte</a>
+    <a routerLinkActive="active" routerLink="core/premium" class="nav-link" *ngIf="isLogged()">Devenir premium</a>
     <a routerLinkActive="active" routerLink="#" class="nav-link" (click)="logout();" *ngIf="isLogged()">Se déconnecter</a>
   </div>
 </nav>

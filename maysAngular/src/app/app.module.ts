@@ -17,6 +17,7 @@ import { PopComponentsComponent } from './core/pop-components/pop-components.com
 import { AccountComponent } from './core/account/account.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AddCommentComponent } from './core/pop-components/add-comment/add-comment.component';
+import { PremiumComponent } from './core/premium/premium.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddCommentComponent } from './core/pop-components/add-comment/add-comme
     PopComponentsComponent,
     AccountComponent,
     NavBarComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    PremiumComponent
   ],
   imports: [
     BrowserModule,
