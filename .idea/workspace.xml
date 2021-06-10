@@ -1,26 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="" />
+    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP">
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/bundles/ngx-toastr.umd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/bundles/ngx-toastr.umd.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/ngx-toastr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/overlay/overlay-container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/overlay/overlay-ref.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/overlay/overlay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/portal/dom-portal-host.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/portal/portal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/public_api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toast-injector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toast-noanimation.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toast.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toast.directive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toastr-config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toastr.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toastr.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/fesm2015/ngx-toastr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/fesm2015/ngx-toastr.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/ngx-toastr.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/ngx-toastr.metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/overlay/overlay-container.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/overlay/overlay-ref.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/overlay/overlay.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/portal/dom-portal-host.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/portal/portal.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/public_api.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr-bs4-alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr-old.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toast-injector.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toast-noanimation.component.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toast.component.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toast.directive.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toastr-config.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toastr.module.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toastr.service.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/CopyrightNotice.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/modules/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/modules/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/tslib.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/tslib.es6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/tslib.es6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/tslib.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/tslib/tslib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/core-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/core-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1smvrVAbRUOdowJUnDQ0fMt64f7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/maysAngular" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Users\Max\Desktop\mays\mays-angular\maysAngular\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ng serve" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/maysAngular/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="ng" />
+      </scripts>
+      <arguments value="serve" />
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -31,10 +122,29 @@
       <option name="presentableId" value="Default" />
       <updated>1621490782219</updated>
       <workItem from="1621490785052" duration="141000" />
+      <workItem from="1623304376061" duration="2257000" />
+      <workItem from="1623314581480" duration="8820000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP" />
   </component>
 </project>

@@ -17,6 +17,7 @@ import { PopComponentsComponent } from './core/pop-components/pop-components.com
 import { AccountComponent } from './core/account/account.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AddCommentComponent } from './core/pop-components/add-comment/add-comment.component';
+import { OnePopManComponent } from './core/pop-components/one-pop-man/one-pop-man.component';
 import { PremiumComponent } from './core/premium/premium.component';
 
 @NgModule({
@@ -32,6 +33,8 @@ import { PremiumComponent } from './core/premium/premium.component';
     PopComponentsComponent,
     AccountComponent,
     NavBarComponent,
+    AddCommentComponent,
+    OnePopManComponent,
     AddCommentComponent,
     PremiumComponent
   ],

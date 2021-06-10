@@ -19,10 +19,6 @@
   </div>
   <app-like [postId]="pop.id"></app-like>
   <div class="box-comments px-3 py-1">
-    <div>
-      <app-add-comment></app-add-comment>
-      <app-comments></app-comments>
-    </div>
-    <p class="text-center"><a href="#"><i class="fas fa-comment"></i></a></p>
+    <p class="text-center"><a routerLinkActive="active" [routerLink]="['core/one-pop',pop.id]"><i class="fas fa-comment"></i></a></p>
   </div>
 </div>

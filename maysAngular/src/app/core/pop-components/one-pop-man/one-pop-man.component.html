@@ -1,0 +1,26 @@
+<div class="post mb-5 p-4">
+  <a href="#" class="pseudo premium">
+    <img src="http://localhost:5000/avatars/{{onePopArray.author.avatar}}" alt="profilPicture">
+    {{onePopArray.author.userName}}
+  </a> · <small class="text-black-50" title="{{title}}">{{time}}</small>
+
+  <h4>{{onePopArray.title}}</h4>
+  <div class="contentBox">
+    <div [ngClass]="{'blurHere':onePopArray.isSpoiler && blur}">
+      <p>{{onePopArray.content}}</p>
+      <p>{{onePopArray.fileName}}</p>
+      <img *ngIf="onePopArray.fileType == 'image'" src="http://localhost:5000/assets/{{onePopArray.filePath}}" alt="picture">
+      <video *ngIf="onePopArray.fileType == 'video'" src="http://localhost:5000/assets/{{onePopArray.filePath}}"></video>
+      <audio *ngIf="onePopArray.fileType == 'audio'" src="http://localhost:5000/assets/{{onePopArray.filePath}}"></audio>
+    </div>
+    <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="onePopArray.isSpoiler && blur">Afficher le spoiler
+    </button>
+  </div>
+  <app-like [postId]="onePopArray.id"></app-like>
+  <div class="box-comments px-3 py-1">
+    <app-add-comment></app-add-comment>
+    <div>
+      <app-comments></app-comments>
+    </div>
+  </div>
+</div>
