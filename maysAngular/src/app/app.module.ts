@@ -11,12 +11,12 @@ import {JwtInterceptor} from './Interceptors/jwt.interceptor';
 import { RegisterComponent } from './core/register/register.component';
 import { PopComponent } from './core/pop-components/pop/pop.component';
 import { PopPostedComponent } from './core/pop-components/pop-posted/pop-posted.component';
-import { CommentsComponent } from './core/pop-components/comments/comments.component';
+import { CommentsComponent } from './core/pop-components/one-pop-man/comments/comments.component';
 import { LikeComponent } from './core/pop-components/pop/like/like.component';
 import { PopComponentsComponent } from './core/pop-components/pop-components.component';
 import { AccountComponent } from './core/account/account.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { AddCommentComponent } from './core/pop-components/add-comment/add-comment.component';
+import { AddCommentComponent } from './core/pop-components/one-pop-man/add-comment/add-comment.component';
 import { OnePopManComponent } from './core/pop-components/one-pop-man/one-pop-man.component';
 import { PremiumComponent } from './core/premium/premium.component';
 

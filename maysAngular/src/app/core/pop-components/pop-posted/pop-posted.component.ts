@@ -29,22 +29,19 @@ export class PopPostedComponent implements OnInit {
   popPost(): void {
     if (this.connected) {
       const isFile = this.popPosted.value.fileContent;
-      console.log(isFile);
       if (isFile !== null) {
         const content = this.popPosted.value.fileContent.match(/([^\\/]+)$/);
         content.shift();
         const name = content[0];
-        console.log(name);
         const form = this.popPosted.value;
-        console.log(form);
         Object.assign(form, {fileName: name});
         const str = this.fileB64;
         form.fileContent = str.substring(str.indexOf(',') + 1);
-        this.popService.postPop(form).subscribe((data) => {
+        this.popService.postPop(form).subscribe(() => {
           this.InitAfterPost.emit();
         });
       } else {
-        this.popService.postPop(this.popPosted.value).subscribe((data) => {
+        this.popService.postPop(this.popPosted.value).subscribe(() => {
           this.InitAfterPost.emit();
         });
       }

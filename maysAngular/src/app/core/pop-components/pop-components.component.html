@@ -1,5 +1,5 @@
 <div *ngIf="isAuth !== false">
   <app-pop-posted (InitAfterPost)="Pops()"></app-pop-posted>
 </div>
-<app-pop *ngFor="let pop of pops" [pop]="pop"></app-pop>
+<app-pop *ngFor="let pop of pops" [pop]="pop" [userRole]="userRole" [userName]="userName" (InitAfterUpdate)="Pops()" (InitAfterDelete)="Pops()"></app-pop>
 

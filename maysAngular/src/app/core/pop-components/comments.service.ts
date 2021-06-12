@@ -16,8 +16,8 @@ export class CommentsService {
     return this.http.get<Array<IComments>>(this.baseUrl + 'comments');
   }
 
-  getPerIdComments(id: any): Observable<IComments> {
-    return this.http.get<IComments>(this.baseUrl + 'comments/' + id);
+  getPerIdComments(id: any): Observable<Array<IComments>> {
+    return this.http.get<Array<IComments>>(this.baseUrl + 'comments/post/' + id);
   }
 
   postComments(values: any): Observable<IComments> {

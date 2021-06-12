@@ -1,0 +1,12 @@
+<div>
+  <div>{{getTime()}}</div>
+  <div [formGroup]="updateForm">
+    <input type="text" id="update_comment" formControlName="content" value="{{allComments.content}}"
+           (keypress)="updateCom($event)" disabled>
+  </div>
+  <div>{{allComments.isSpoiler}}</div>
+  <input type="hidden" id="id_comment" value="{{allComments.postId}}">
+  <div>
+    <button class="btn" (click)="updateEnable()">update</button>
+  </div>
+</div>

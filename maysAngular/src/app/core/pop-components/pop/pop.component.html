@@ -1,11 +1,17 @@
-<div class="post mb-5 p-4">
+<div class="post mb-5 p-4" *ngIf="!bIsUpdating">
   <a href="#" class="pseudo premium">
-    <img *ngIf="pop.author.avatar !== null" src="http://localhost:5000/avatars/{{pop.author.avatar}}" alt="profilPicture">
-    <img *ngIf="pop.author.avatar === null" src="http://localhost:4200/assets/build/defaultuser.png" alt="profilPicture">
+    <img *ngIf="pop.author.avatar !== null" src="http://localhost:5000/avatars/{{pop.author.avatar}}"
+         alt="profilPicture">
+    <img *ngIf="pop.author.avatar === null" src="http://localhost:4200/assets/build/defaultuser.png"
+         alt="profilPicture">
     {{pop.author.userName}}
   </a> · <small class="text-black-50" title="{{title}}">{{time}}</small>
 
   <h4>{{pop.title}}</h4>
+  <div *ngIf="userName === pop.author.userName || userRole === 'admin'">
+    <p><i (click)="update()" class="fas fa-edit"></i>
+      <i (click)="deletePost()" class="fas fa-trash"></i></p>
+  </div>
   <div class="contentBox">
     <div [ngClass]="{'blurHere':pop.isSpoiler && blur}">
       <p>{{pop.content}}</p>
@@ -19,6 +25,34 @@
   </div>
   <app-like [postId]="pop.id"></app-like>
   <div class="box-comments px-3 py-1">
-    <p class="text-center"><a routerLinkActive="active" [routerLink]="['core/one-pop',pop.id]"><i class="fas fa-comment"></i></a></p>
+    <p class="text-center"><a routerLinkActive="active" [routerLink]="['core/one-pop',pop.id]"><i
+      class="fas fa-comment"></i></a></p>
   </div>
+</div>
+
+<div class="post mb-5 p-4" *ngIf="bIsUpdating">
+  <form [formGroup]="popUpdate" (ngSubmit)="updatePost()">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input formControlName="title" type="text" id="title" name="title" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="content">Texte</label>
+      <textarea formControlName="content" type="text" id="content" class="form-control" name="content"
+                rows="6"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="fileContent">Media</label>
+      <input class="form-control-file" formControlName="fileContent" type="file" id="fileContent" name="fileContent"
+             (change)="onTheFly($event)">
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input formControlName="isSpoiler" class="form-check-input" type="checkbox" value="Spoiler" id="ispoiler">
+        <label class="form-check-label" for="ispoiler">Spoiler</label>
+      </div>
+    </div>
+    <input type="hidden" formControlName="id" value="{{pop.id}}">
+    <button type="submit" class="btn btn-primary">Publier</button>
+  </form>
 </div>

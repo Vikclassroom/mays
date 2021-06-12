@@ -4,6 +4,7 @@ import {CommentsService} from '../comments.service';
 import {PopService} from '../pop.service';
 import {IPop} from '../../../model-interface/pop';
 import * as moment from 'moment';
+import {IComments} from '../../../model-interface/comments';
 
 @Component({
   selector: 'app-one-pop-man',
@@ -12,7 +13,9 @@ import * as moment from 'moment';
 })
 export class OnePopManComponent implements OnInit {
   public id: string;
-  public onePopArray: IPop;
+  public onePop: IPop;
+  public loaded = false;
+  public allThisPopComments: Array<IComments>;
   blur = true;
   title: string;
   time: string;
@@ -24,19 +27,19 @@ export class OnePopManComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     this.getOnePop(this.id);
     this.getOnePopComs(this.id);
-    this.datePosted();
   }
 
   getOnePop(id: string): void {
     this.pops.getPopById(id).subscribe((data) => {
-      this.onePopArray = data;
-      console.log(data);
+      this.onePop = data;
+      this.loaded = true;
+      this.datePosted();
     });
   }
 
   getOnePopComs(id: string): void {
     this.coms.getPerIdComments(id).subscribe((data) => {
-      console.log(data);
+      this.allThisPopComments = data;
     });
   }
 
@@ -46,8 +49,7 @@ export class OnePopManComponent implements OnInit {
 
   datePosted(): void {
     moment.locale('fr');
-    const time = moment(this.onePopArray.date);
-    console.log(time);
+    const time = moment(this.onePop.date);
     this.time = time.fromNow();
     this.title = time.format('DD.MM.YYYY HH:mm:ss');
   }
