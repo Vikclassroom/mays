@@ -2,7 +2,7 @@
 
 ## Lancement
 
-Pour lancer le projet, lancez le backend (mays-dotnet), puis les commandes suivantes
+Pour lancer le projet, lancez le backend (mays-dotnet), puis les commandes suivantes dans un terminal
 
 ```bash
 cd maysAngular
