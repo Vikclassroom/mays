@@ -1,69 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="did stuff like you">
-      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/add-comment/add-comment.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/model-interface/token.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/bundles/ngx-toastr.umd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/bundles/ngx-toastr.umd.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/ngx-toastr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/overlay/overlay-container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/overlay/overlay-ref.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/overlay/overlay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/portal/dom-portal-host.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/portal/portal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/public_api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toast-injector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toast-noanimation.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toast.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toast.directive.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toastr-config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toastr.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/esm2015/toastr/toastr.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/fesm2015/ngx-toastr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/fesm2015/ngx-toastr.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/ngx-toastr.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/ngx-toastr.metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/overlay/overlay-container.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/overlay/overlay-ref.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/overlay/overlay.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/portal/dom-portal-host.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/portal/portal.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/public_api.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr-bs4-alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr-old.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toast-injector.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toast-noanimation.component.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toast.component.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toast.directive.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toastr-config.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toastr.module.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-toastr/toastr/toastr.service.d.ts" afterDir="false" />
+    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="did stuff">
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/list-user/list-user.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/list-user/list-user.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/list-user/list-user.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/right.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/model-interface/get-comment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/model-interface/post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/model-interface/right.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maysAngular/src/app/model-interface/user-admin.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/add-comment/add-comment.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/add-comment/add-comment.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/add-comment/add-comment.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/add-comment/add-comment.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/add-comment/add-comment.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/core.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/list-user/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/comments.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/comments.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/comments/comments.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/comments/comments.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/comments/comments.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/comments/comments.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/add-comment/add-comment.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/add-comment/add-comment.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/one-pop-man.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-components.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-components.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-components.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-components.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-posted/pop-posted.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-posted/pop-posted.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/model-interface/comments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/model-interface/comments.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/model-interface/like.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/model-interface/like.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/model-interface/pop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/model-interface/pop.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +101,8 @@
       <workItem from="1623314581480" duration="11727000" />
       <workItem from="1623351229395" duration="851000" />
       <workItem from="1623492375853" duration="20087000" />
+      <workItem from="1623538439624" duration="8190000" />
+      <workItem from="1623575425720" duration="22028000" />
     </task>
     <task id="LOCAL-00001" summary="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP">
       <created>1623324875583</created>
@@ -165,6 +133,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP" />
     <MESSAGE value="did stuff like you" />
-    <option name="LAST_COMMIT_MESSAGE" value="did stuff like you" />
+    <MESSAGE value="did stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="did stuff" />
   </component>
 </project>

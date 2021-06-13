@@ -24,7 +24,7 @@
   <div class="box-comments px-3 py-1">
     <app-add-comment [id]="id" (comEvent)="getOnePopComs(id)"></app-add-comment>
     <div *ngFor="let comments of allThisPopComments">
-      <app-comments [allComments]="comments"></app-comments>
+      <app-comments [allComments]="comments" (comEvent)="getOnePopComs(id)"></app-comments>
     </div>
   </div>
 </div>

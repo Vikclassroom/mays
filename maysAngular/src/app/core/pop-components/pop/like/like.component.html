@@ -1,6 +1,5 @@
 <form [formGroup]="likeForm" class="box-like px-3 py-1">
-    <label for="{{postId}}" (click)="onChangeLike()" class="like-btn unliked"></label>
-    <input formControlName="id" id="{{postId}}" type="hidden">
+    <span>{{numberLike}} </span><label (click)="onChangeLike()" class="like-btn unliked"></label>
 </form>
 <!--
 <div class="box-like px-3 py-1">

@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../guard/auth-service/auth.service';
 import {PopService} from '../pop.service';
+import {RightService} from '../right.service';
 
 @Component({
   selector: 'app-pop',
@@ -12,8 +13,8 @@ import {PopService} from '../pop.service';
 })
 export class PopComponent implements OnInit {
   @Input() pop: IPop;
-  @Input() userName: string;
-  @Input() userRole: string;
+  userName: string;
+  userRole: string;
   blur = true;
   time: string;
   title: string;
@@ -24,18 +25,28 @@ export class PopComponent implements OnInit {
   @Output() readonly InitAfterUpdate = new EventEmitter();
   @Output() readonly InitAfterDelete = new EventEmitter();
 
-  constructor(private auth: AuthService, private popService: PopService, private fb: FormBuilder) {
+  constructor(private auth: AuthService, private popService: PopService, private fb: FormBuilder, private r: RightService) {
     this.popUpdate = fb.group({
       title: ['', [Validators.required]],
       content: [''],
       fileContent: [null],
-      isSpoiler: [false],
-      id: ['']
+      isSpoiler: [false]
     });
   }
 
   ngOnInit(): void {
     this.datePosted();
+    this.userName = this.r.getRight().userName;
+    this.userRole = this.r.getRight().userRole[0];
+    this.auth.isAuth$.subscribe((data) => {
+      if (data) {
+        this.userName = this.r.getRight().userName;
+        this.userRole = this.r.getRight().userRole[0];
+      } else {
+        this.userName = '';
+        this.userRole = '';
+      }
+    });
   }
 
   onShow(): void {
@@ -60,7 +71,11 @@ export class PopComponent implements OnInit {
   }
 
   deletePost(): void {
-
+    this.popService.deletePop(this.pop.id).subscribe(() => {
+      this.InitAfterDelete.emit();
+    }, () => {
+      console.log('une erreur est survenu lors de la suppression du post');
+    });
   }
 
   // cette dupplication de code aurait pu être l'oeuvre d'un service à part entière
@@ -76,14 +91,16 @@ export class PopComponent implements OnInit {
         Object.assign(form, {fileName: name});
         const str = this.fileB64;
         form.fileContent = str.substring(str.indexOf(',') + 1);
-        this.popService.updatePop(this.popUpdate.value.id, form).subscribe(() => {
+        this.popService.updatePop(this.pop.id, form).subscribe(() => {
           this.update();
           this.InitAfterUpdate.emit();
         });
       } else {
-        this.popService.updatePop(this.popUpdate.value.id, this.popUpdate.value).subscribe(() => {
+        this.popService.updatePop(this.pop.id, this.popUpdate.value).subscribe(() => {
           this.update();
           this.InitAfterUpdate.emit();
+        }, () => {
+          console.log('une erreur est survenu');
         });
       }
     }

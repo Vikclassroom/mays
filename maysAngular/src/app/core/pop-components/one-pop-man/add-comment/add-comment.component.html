@@ -1,6 +1,5 @@
 <div [formGroup]="uploadCom">
   <input type="text" formControlName="content">
-  <label for="isSpoilerComment">Spoiler ?</label>
-  <input type="checkbox" id="isSpoilerComment" formControlName="isSpoiler">
+  <input type="checkbox" formControlName="isSpoiler"> is Spoiler ?
   <input type="submit" class="btn" value="Pop" (click)="postCommentary()">
 </div>

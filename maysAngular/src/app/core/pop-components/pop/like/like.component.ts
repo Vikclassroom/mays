@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {LikeService} from './like.service';
 import {AuthService} from '../../../../guard/auth-service/auth.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {PopService} from '../../pop.service';
+// import {PopService} from '../../pop.service';
 
 @Component({
   selector: 'app-like',
@@ -13,9 +13,12 @@ export class LikeComponent implements OnInit {
   eventBox: boolean;
   likeForm: FormGroup;
   @Input() postId: string;
+  @Input() isLiked: boolean;
   id: string;
+  isAuth: boolean;
+  @Input() numberLike: number;
 
-  constructor(private likeService: LikeService, private auth: AuthService, private fb: FormBuilder, private popService: PopService) {
+  constructor(private likeService: LikeService, private auth: AuthService, private fb: FormBuilder, /*private popService: PopService*/) {
     this.likeForm = this.fb.group({
       id: ['']
     });
@@ -23,19 +26,30 @@ export class LikeComponent implements OnInit {
 
   ngOnInit(): void {
     this.likeForm.controls.id.setValue(this.postId);
+    this.auth.isAuth$.subscribe((data) => {
+      this.isAuth = data;
+    });
   }
 
   onChangeLike(): void {
-    if (this.auth.isAuthenticated) {
-      const id = this.likeForm.value.id;
-      console.log(id);
-      // const linkLike = this.
-     /* this.likeService.postLike(id).subscribe((likedPop) => {
-
-      });
-*/
-      // const form =
-      // this.likeService.postLike(form).subscribe();
+    if (this.isAuth) {
+      if (this.isLiked) {
+        this.likeService.deleteLike(this.postId).subscribe(() => {
+            console.log('unliked');
+            this.isLiked = false;
+          },
+          () => {
+            console.log('problème unlike');
+          });
+      } else {
+        this.likeService.postLike(this.postId).subscribe(() => {
+            console.log('liked');
+            this.isLiked = true;
+          },
+          () => {
+            console.log('problème like');
+          });
+      }
     }
   }
 }

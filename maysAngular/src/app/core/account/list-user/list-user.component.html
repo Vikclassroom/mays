@@ -1,0 +1,18 @@
+<th class="col-auto">User</th>
+<th class="col-auto">Email</th>
+<th class="col-auto">Premium</th>
+<th class="col-auto">Option</th>
+<table>
+  <tr *ngFor="let user of users">
+    <td class="col-auto">{{user.userName}}</td>
+    <td class="col-auto">{{user.email}}</td>
+
+    <td *ngIf="user.isPremium" class="col-auto">{{user.isPremium}}</td>
+    <td *ngIf="!user.isPremium" class="col-auto">{{user.isPremium}}</td>
+
+    <td class="col-auto">
+      <i class="fas fa-thumbs-up" (click)="addPremium(user.id)"></i>
+      <i class="fas fa-thumbs-down col-6" (click)="removePremium(user.id)"></i>
+    </td>
+  </tr>
+</table>

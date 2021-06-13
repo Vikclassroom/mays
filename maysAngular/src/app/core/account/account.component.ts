@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AccountService} from './account.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {confirmPassword} from './confirmPassword';
+import {RightService} from '../pop-components/right.service';
 
 @Component({
   selector: 'app-account',
@@ -12,8 +13,9 @@ export class AccountComponent implements OnInit {
   userInformation: FormGroup;
   avatarForm: FormGroup;
   private fileB64: string;
+  role: string;
 
-  constructor(private service: AccountService, private fb: FormBuilder) {
+  constructor(private service: AccountService, private fb: FormBuilder, private r: RightService) {
     this.userInformation = this.fb.group({
         password: ['', Validators.required],
         confirmPassword: ['', Validators.required]
@@ -29,20 +31,26 @@ export class AccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInformation();
+    this.role = this.r.getRight().userRole[0];
   }
 
   public getInformation(): void {
-    this.service.getUserInformation().subscribe();
+    this.service.getUserInformation().subscribe(() => {
+    }, () => {
+      console.log('Un problème de connexion est survenu');
+    });
   }
 
   public updatePassword(): void {
     const form = this.userInformation;
-    this.service.updateUserInformation(form).subscribe();
+    this.service.updateUserInformation(form).subscribe(() => {
+    }, () => {
+      console.log('Un problème de connexion est survenu');
+    });
   }
 
   public updateAvatar(): void {
     const isFile = this.avatarForm.value.avatar;
-    console.log(isFile);
     if (isFile !== null) {
       const content = isFile.match(/([^\\/]+)$/);
       content.shift();
@@ -51,10 +59,7 @@ export class AccountComponent implements OnInit {
       Object.assign(form, {fileName: name});
       const str = this.fileB64;
       Object.assign(form, {fileContent: str.substring(str.indexOf(',') + 1)});
-      console.log(form);
-      this.service.updateUserAvatar(form).subscribe((data) => {
-
-      });
+      this.service.updateUserAvatar(form).subscribe();
     }
   }
 

@@ -1,12 +1,20 @@
-<div>
+<div *ngIf="!bIsUpdating">
   <div>{{getTime()}}</div>
   <div [formGroup]="updateForm">
-    <input type="text" id="update_comment" formControlName="content" value="{{allComments.content}}"
-           (keypress)="updateCom($event)" disabled>
-  </div>
-  <div>{{allComments.isSpoiler}}</div>
-  <input type="hidden" id="id_comment" value="{{allComments.postId}}">
-  <div>
-    <button class="btn" (click)="updateEnable()">update</button>
+    <div>{{allComments.content}}</div>
+    <div>{{allComments.isSpoiler}}</div>
+    <div>
+      <button *ngIf="userName === allComments.author.userName" class="btn" (click)="updateEnable()">update</button>
+      <button *ngIf="userName === allComments.author.userName" class="btn" (click)="deleteComments()">delete</button>
+    </div>
   </div>
 </div>
+
+<div *ngIf="bIsUpdating" [formGroup]="updateForm">
+  <input type="text" formControlName="content">
+  <input type="checkbox" formControlName="isSpoiler"> is Spoiler ?
+  <input type="submit" class="btn" value="Pop" (click)="updateCom()">
+  <button class="btn" (click)="updateEnable()">Annuler</button>
+</div>
+
+

@@ -25,6 +25,6 @@ export class LikeService {
   }
 
   deleteLike(id: any): Observable<ILike> {
-    return this.http.delete<ILike>(this.baseUrl + 'likes' + id);
+    return this.http.delete<ILike>(this.baseUrl + 'likes/' + id);
   }
 }

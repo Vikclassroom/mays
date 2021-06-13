@@ -8,10 +8,12 @@
   </a> · <small class="text-black-50" title="{{title}}">{{time}}</small>
 
   <h4>{{pop.title}}</h4>
-  <div *ngIf="userName === pop.author.userName || userRole === 'admin'">
-    <p><i (click)="update()" class="fas fa-edit"></i>
-      <i (click)="deletePost()" class="fas fa-trash"></i></p>
+
+  <div>
+    <i *ngIf="userName === pop.author.userName" (click)="update()" class="fas fa-edit"></i>
+    <i *ngIf="userName === pop.author.userName || userRole === 'admin'" (click)="deletePost()" class="fas fa-trash col-3"></i>
   </div>
+
   <div class="contentBox">
     <div [ngClass]="{'blurHere':pop.isSpoiler && blur}">
       <p>{{pop.content}}</p>
@@ -23,9 +25,9 @@
     <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="pop.isSpoiler && blur">Afficher le spoiler
     </button>
   </div>
-  <app-like [postId]="pop.id"></app-like>
+  <app-like [postId]="pop.id" [isLiked]="pop.isLiked" [numberLike]="pop.countLikes"></app-like>
   <div class="box-comments px-3 py-1">
-    <p class="text-center"><a routerLinkActive="active" [routerLink]="['core/one-pop',pop.id]"><i
+    <p class="text-center"><span>{{pop.countComment }}</span><a routerLinkActive="active" [routerLink]="['core/one-pop',pop.id]"><i
       class="fas fa-comment"></i></a></p>
   </div>
 </div>
@@ -52,7 +54,7 @@
         <label class="form-check-label" for="ispoiler">Spoiler</label>
       </div>
     </div>
-    <input type="hidden" formControlName="id" value="{{pop.id}}">
-    <button type="submit" class="btn btn-primary">Publier</button>
+    <button type="submit" class="btn btn-primary">Modifier</button>
+    <button class="btn btn-secondary" (click)="update()">Annuler</button>
   </form>
 </div>

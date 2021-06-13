@@ -3,6 +3,7 @@ import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {IComments} from '../../model-interface/comments';
+import {IGetComment} from '../../model-interface/get-comment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class CommentsService {
     return this.http.get<Array<IComments>>(this.baseUrl + 'comments');
   }
 
-  getPerIdComments(id: any): Observable<Array<IComments>> {
-    return this.http.get<Array<IComments>>(this.baseUrl + 'comments/post/' + id);
+  getPerIdComments(id: any): Observable<Array<IGetComment>> {
+    return this.http.get<Array<IGetComment>>(this.baseUrl + 'comments/post/' + id);
   }
 
   postComments(values: any): Observable<IComments> {

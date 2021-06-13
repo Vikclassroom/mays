@@ -4,7 +4,7 @@ import {CommentsService} from '../comments.service';
 import {PopService} from '../pop.service';
 import {IPop} from '../../../model-interface/pop';
 import * as moment from 'moment';
-import {IComments} from '../../../model-interface/comments';
+import {IGetComment} from '../../../model-interface/get-comment';
 
 @Component({
   selector: 'app-one-pop-man',
@@ -15,7 +15,7 @@ export class OnePopManComponent implements OnInit {
   public id: string;
   public onePop: IPop;
   public loaded = false;
-  public allThisPopComments: Array<IComments>;
+  public allThisPopComments: Array<IGetComment>;
   blur = true;
   title: string;
   time: string;
