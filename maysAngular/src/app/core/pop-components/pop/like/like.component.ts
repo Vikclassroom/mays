@@ -8,10 +8,8 @@ import {AuthService} from '../../../../guard/auth-service/auth.service';
   styleUrls: ['./like.component.scss']
 })
 export class LikeComponent implements OnInit {
-  eventBox: boolean;
   @Input() postId: string;
   @Input() isLiked: boolean;
-  id: string;
   isAuth: boolean;
   @Input() numberLike: number;
 
@@ -29,6 +27,7 @@ export class LikeComponent implements OnInit {
         this.likeService.deleteLike(this.postId).subscribe(() => {
             console.log('unliked');
             this.isLiked = false;
+            this.numberLike--;
           },
           () => {
             console.log('problème unlike');
@@ -37,6 +36,7 @@ export class LikeComponent implements OnInit {
         this.likeService.postLike(this.postId).subscribe(() => {
             console.log('liked');
             this.isLiked = true;
+            this.numberLike++;
           },
           () => {
             console.log('problème like');

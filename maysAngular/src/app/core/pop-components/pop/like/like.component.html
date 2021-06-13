@@ -1,5 +1,5 @@
 <div class="box-like px-3 py-1">
-    <span>{{numberLike}} </span><label (click)="onChangeLike()" class="like-btn unliked"></label>
+    <span>{{numberLike}} </span><label (click)="onChangeLike()" class="like-btn unliked" [ngClass]="{liked:isLiked}"></label>
 </div>
 <!--
 <div class="box-like px-3 py-1">

@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
       <workItem from="1623351229395" duration="851000" />
       <workItem from="1623492375853" duration="20087000" />
       <workItem from="1623538439624" duration="8190000" />
-      <workItem from="1623575425720" duration="23059000" />
+      <workItem from="1623575425720" duration="25967000" />
     </task>
     <task id="LOCAL-00001" summary="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP">
       <created>1623324875583</created>
@@ -93,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623605719839</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="did stuff">
+      <created>1623606856074</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623606856074</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
