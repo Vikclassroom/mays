@@ -1,6 +1,12 @@
 <hr>
 <div *ngIf="!bIsUpdating">
-  <div>{{getTime()}}</div>
+  <a href="#" class="pseudo premium">
+    <img *ngIf="allComments.author.avatar !== null" src="http://localhost:5000/avatars/{{allComments.author.avatar}}"
+         alt="profilPicture">
+    <img *ngIf="allComments.author.avatar === null" src="http://localhost:4200/assets/build/defaultuser.png"
+         alt="profilPicture">
+    {{allComments.author.userName}}
+  </a> · <small class="text-black-50">{{getTime()}}</small>
   <button (click)="onShow()" class="btn btn-dark" *ngIf="allComments.isSpoiler && blur">spoiler</button>
   <div [formGroup]="updateForm" [ngClass]="{'blurHere':allComments.isSpoiler && blur}">
     <p>{{allComments.content}}</p>
