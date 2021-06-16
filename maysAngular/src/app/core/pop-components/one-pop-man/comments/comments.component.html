@@ -1,22 +1,29 @@
 <hr>
 <div *ngIf="!bIsUpdating">
   <div>{{getTime()}}</div>
+  <button (click)="onShow()" class="btn btn-dark" *ngIf="allComments.isSpoiler && blur">spoiler</button>
   <div [formGroup]="updateForm" [ngClass]="{'blurHere':allComments.isSpoiler && blur}">
     <p>{{allComments.content}}</p>
     <div>
-      <a href="#" *ngIf="userName === allComments.author.userName" class="mr-3" (click)="updateEnable()"><i class="fas fa-edit"></i> Modifier</a>
-      <a href="#" *ngIf="userName === allComments.author.userName" (click)="deleteComments()"><i class="fas fa-trash"></i> Supprimer</a>
+      <button *ngIf="userName === allComments.author.userName" class="btn btn-link mr-3" (click)="updateEnable()"><i class="fas fa-edit"></i> Modifier</button>
+      <button *ngIf="userName === allComments.author.userName" class="btn btn-link" (click)="deleteComments()"><i class="fas fa-trash"></i> Supprimer</button>
     </div>
-    <div>
   </div>
-  <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="allComments.isSpoiler && blur">spoiler</button>
 </div>
 
 <div *ngIf="bIsUpdating" [formGroup]="updateForm">
-  <input type="text" formControlName="content">
-  <input type="checkbox" formControlName="isSpoiler"> is Spoiler ?
-  <input type="submit" class="btn" value="Pop" (click)="updateCom()">
-  <button class="btn" (click)="updateEnable()">Annuler</button>
+  <div class="form-group">
+    <label for="textInput">Texte</label>
+    <textarea formControlName="content" class="form-control" id="textInput" rows="6"></textarea>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input formControlName="isSpoiler" class="form-check-input" type="checkbox" value="Spoiler" id="ispoiler">
+      <label class="form-check-label" for="ispoiler">Spoiler</label>
+    </div>
+  </div>
+  <input type="submit" class="btn btn-primary" value="Modifier" (click)="updateCom()">
+  <button class="btn btn-secondary" (click)="updateEnable()">Annuler</button>
 </div>
 
 
