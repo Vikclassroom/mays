@@ -19,4 +19,13 @@ export class RightService {
       userRole: decoded.role
     };
   }
+
+  isAdmin(): boolean {
+    for (const right of this.getRight().userRole){
+      if (right === 'admin'){
+        return true;
+      }
+    }
+    return false;
+  }
 }

@@ -25,7 +25,7 @@
       </form>
     </div>
 
-    <div class="post mb-5 p-4"  *ngIf="role === 'admin'">
+    <div class="post mb-5 p-4"  *ngIf="isAdmin">
       <h4>Liste des utilisateurs</h4>
       <app-list-user></app-list-user>
     </div>

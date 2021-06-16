@@ -11,7 +11,7 @@
 
   <div>
     <i *ngIf="userName === pop.author.userName" (click)="update()" class="fas fa-edit"></i>
-    <i *ngIf="userName === pop.author.userName || userRole === 'admin'" (click)="deletePost()" class="fas fa-trash col-3"></i>
+    <i *ngIf="userName === pop.author.userName || isAdmin" (click)="deletePost()" class="fas fa-trash col-3"></i>
   </div>
 
   <div class="contentBox">

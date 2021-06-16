@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RightService} from '../../right.service';
 import {CommentsService} from '../../comments.service';
 import {IGetComment} from '../../../../model-interface/get-comment';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-comments',
@@ -15,7 +15,7 @@ export class CommentsComponent implements OnInit {
   @Input() allComments: IGetComment;
   @Output() updateForm: FormGroup;
   userName: string;
-  userRole: string;
+  isAdmin: boolean;
   bIsUpdating = false;
   @Output() comEvent: EventEmitter<void> = new EventEmitter<void>();
 
@@ -31,7 +31,7 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.userName = this.r.getRight().userName;
-    this.userRole = this.r.getRight().userRole;
+    this.isAdmin = this.r.isAdmin();
 
     this.updateForm.patchValue({
       content: this.allComments.content

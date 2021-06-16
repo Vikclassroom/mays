@@ -5,7 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../guard/auth-service/auth.service';
 import {PopService} from '../pop.service';
 import {RightService} from '../right.service';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-pop',
@@ -15,7 +15,7 @@ import {ToastrService} from "ngx-toastr";
 export class PopComponent implements OnInit {
   @Input() pop: IPop;
   userName: string;
-  userRole: string;
+  isAdmin: boolean;
   blur = true;
   time: string;
   title: string;
@@ -42,14 +42,14 @@ export class PopComponent implements OnInit {
   ngOnInit(): void {
     this.datePosted();
     this.userName = this.r.getRight().userName;
-    this.userRole = this.r.getRight().userRole[0];
+    this.isAdmin = this.r.isAdmin();
     this.auth.isAuth$.subscribe((data) => {
         if (data) {
           this.userName = this.r.getRight().userName;
-          this.userRole = this.r.getRight().userRole[0];
+          this.isAdmin = this.r.isAdmin();
         } else {
           this.userName = '';
-          this.userRole = '';
+          this.isAdmin = false;
         }
       },
       () => {

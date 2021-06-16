@@ -3,7 +3,7 @@ import {AccountService} from './account.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {confirmPassword} from './confirmPassword';
 import {RightService} from '../pop-components/right.service';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-account',
@@ -14,7 +14,7 @@ export class AccountComponent implements OnInit {
   userInformation: FormGroup;
   avatarForm: FormGroup;
   private fileB64: string;
-  role: string;
+  isAdmin: boolean;
 
   constructor(private service: AccountService,
               private fb: FormBuilder,
@@ -35,7 +35,7 @@ export class AccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInformation();
-    this.role = this.r.getRight().userRole[0];
+    this.isAdmin = this.r.isAdmin();
   }
 
   public getInformation(): void {
