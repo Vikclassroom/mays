@@ -20,7 +20,7 @@
       spoiler
     </button>
   </div>
-  <app-like [postId]="onePop.id"></app-like>
+  <app-like [postId]="onePop.id" [isLiked]="onePop.isLiked" [numberLike]="onePop.countLikes"></app-like>
   <div class="box-comments px-3 py-1">
     <app-add-comment [id]="id" (comEvent)="getOnePopComs(id)"></app-add-comment>
     <div *ngFor="let comments of allThisPopComments">
