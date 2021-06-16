@@ -9,11 +9,6 @@
 
   <h4>{{pop.title}}</h4>
 
-  <div>
-    <i *ngIf="userName === pop.author.userName" (click)="update()" class="fas fa-edit"></i>
-    <i *ngIf="userName === pop.author.userName || isAdmin" (click)="deletePost()" class="fas fa-trash col-3"></i>
-  </div>
-
   <div class="contentBox">
     <div [ngClass]="{'blurHere':pop.isSpoiler && blur}">
       <p>{{pop.content}}</p>
@@ -29,6 +24,11 @@
   <div class="box-comments px-3 py-1">
     <p class="mb-0 mr-2">{{pop.countComment }}</p><a routerLinkActive="active" [routerLink]="['core/one-pop',pop.id]"><i
       class="fas fa-comment"></i></a>
+  </div>
+
+  <div>
+    <a href="#" *ngIf="userName === pop.author.userName" (click)="update()" class="mr-3"><i class="fas fa-edit"></i> Modifier</a>
+    <a href="#" *ngIf="userName === pop.author.userName || isAdmin" (click)="deletePost()"><i class="fas fa-trash"></i> Supprimer</a>
   </div>
 </div>
 

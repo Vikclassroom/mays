@@ -4,9 +4,10 @@
   <div [formGroup]="updateForm" [ngClass]="{'blurHere':allComments.isSpoiler && blur}">
     <p>{{allComments.content}}</p>
     <div>
-      <button *ngIf="userName === allComments.author.userName" class="btn" (click)="updateEnable()"><i class="fas fa-edit"></i></button>
-      <button *ngIf="userName === allComments.author.userName" class="btn" (click)="deleteComments()"><i class="fas fa-trash"></i></button>
+      <a href="#" *ngIf="userName === allComments.author.userName" class="mr-3" (click)="updateEnable()"><i class="fas fa-edit"></i> Modifier</a>
+      <a href="#" *ngIf="userName === allComments.author.userName" (click)="deleteComments()"><i class="fas fa-trash"></i> Supprimer</a>
     </div>
+    <div>
   </div>
   <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="allComments.isSpoiler && blur">spoiler</button>
 </div>
