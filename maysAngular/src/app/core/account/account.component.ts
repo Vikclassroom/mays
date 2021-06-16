@@ -21,11 +21,12 @@ export class AccountComponent implements OnInit {
               private r: RightService,
               private toastr: ToastrService) {
     this.userInformation = this.fb.group({
-        password: ['', Validators.required],
+        oldPassword: ['', Validators.required],
+        newPassword: ['', Validators.required],
         confirmPassword: ['', Validators.required]
       },
       {
-        validator: confirmPassword('password', 'confirmPassword')
+        validator: confirmPassword('newPassword', 'confirmPassword')
       });
 
     this.avatarForm = this.fb.group({
@@ -46,7 +47,7 @@ export class AccountComponent implements OnInit {
   }
 
   public updatePassword(): void {
-    const form = this.userInformation;
+    const form = this.userInformation.value;
     this.service.updateUserInformation(form).subscribe(() => {
     }, () => {
       this.toastr.error('Un problème de connexion est survenu');
