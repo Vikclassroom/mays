@@ -28,4 +28,13 @@ export class RightService {
     }
     return false;
   }
+
+  isPremium(): boolean {
+    for (const right of this.getRight().userRole){
+      if (right === 'admin' || right === 'premium'){
+        return true;
+      }
+    }
+    return false;
+  }
 }

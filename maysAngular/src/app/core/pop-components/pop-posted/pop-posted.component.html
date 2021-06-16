@@ -16,7 +16,8 @@
       </div>
       <div class="form-group">
         <label for="fileContent">Media</label>
-        <input class="form-control-file" formControlName="fileContent" type="file" id="fileContent" name="fileContent" (change)="onTheFly($event)">
+        <input *ngIf="!isAdmin" class="form-control-file" formControlName="fileContent" type="file" id="fileContent" name="fileContent" (change)="onTheFly($event)" accept="image/*">
+        <input *ngIf="isAdmin" class="form-control-file" formControlName="fileContent" type="file" id="fileContent" name="fileContent" (change)="onTheFly($event)" accept="image/*,.mp3,.wav,.mp4,.webm">
       </div>
       <div class="form-group">
         <div class="form-check">

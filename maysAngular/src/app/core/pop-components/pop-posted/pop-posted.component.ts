@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from '../../../guard/auth-service/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PopService} from '../pop.service';
+import {RightService} from '../right.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
@@ -14,8 +15,9 @@ export class PopPostedComponent implements OnInit {
   connected: boolean = this.auth.isAuthenticated();
   @Output() readonly InitAfterPost = new EventEmitter();
   private fileB64: string;
+  public isAdmin: boolean;
 
-  constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder, private toastr: ToastrService) {
+  constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder, private toastr: ToastrService, private r: RightService) {
     this.popPosted = fb.group({
       title: ['', [Validators.required]],
       content: [''],
@@ -25,6 +27,7 @@ export class PopPostedComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isAdmin = this.r.isAdmin();
   }
 
   popPost(): void {
