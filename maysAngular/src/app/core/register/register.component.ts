@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../guard/auth-service/auth.service';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
-              private router: Router) {
+              private router: Router,
+              private toastr: ToastrService) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
@@ -31,7 +33,11 @@ export class RegisterComponent implements OnInit {
       this.authService.register(val.name, val.email, val.password)
         .subscribe(
           () => {
+            this.toastr.success('Votre compte à été créé avec succès');
             this.router.navigateByUrl('/');
+          },
+          () => {
+            this.toastr.error('Un problème lors de la création du compte est survenu');
           }
         );
     }

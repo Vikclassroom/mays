@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LikeService} from './like.service';
 import {AuthService} from '../../../../guard/auth-service/auth.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-like',
@@ -13,7 +14,7 @@ export class LikeComponent implements OnInit {
   isAuth: boolean;
   @Input() numberLike: number;
 
-  constructor(private likeService: LikeService, private auth: AuthService) {}
+  constructor(private likeService: LikeService, private auth: AuthService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.auth.isAuth$.subscribe((data) => {
@@ -25,21 +26,21 @@ export class LikeComponent implements OnInit {
     if (this.isAuth) {
       if (this.isLiked) {
         this.likeService.deleteLike(this.postId).subscribe(() => {
-            console.log('unliked');
+            this.toastr.success('unlike');
             this.isLiked = false;
             this.numberLike--;
           },
           () => {
-            console.log('problème unlike');
+            this.toastr.error('problème unlike');
           });
       } else {
         this.likeService.postLike(this.postId).subscribe(() => {
-            console.log('liked');
+            this.toastr.success('like');
             this.isLiked = true;
             this.numberLike++;
           },
           () => {
-            console.log('problème like');
+            this.toastr.error('problème like');
           });
       }
     }

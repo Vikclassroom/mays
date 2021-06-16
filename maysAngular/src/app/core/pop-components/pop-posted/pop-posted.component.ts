@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from '../../../guard/auth-service/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PopService} from '../pop.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-pop-posted',
@@ -14,7 +15,7 @@ export class PopPostedComponent implements OnInit {
   @Output() readonly InitAfterPost = new EventEmitter();
   private fileB64: string;
 
-  constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder) {
+  constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder, private toastr: ToastrService) {
     this.popPosted = fb.group({
       title: ['', [Validators.required]],
       content: [''],
@@ -38,12 +39,20 @@ export class PopPostedComponent implements OnInit {
         const str = this.fileB64;
         form.fileContent = str.substring(str.indexOf(',') + 1);
         this.popService.postPop(form).subscribe(() => {
+          this.toastr.success('La création de la pop est une réussite !!');
           this.InitAfterPost.emit();
-        });
+        },
+          () => {
+          this.toastr.error('Une erreur de formulaire ou de serveur est en cause');
+          });
       } else {
         this.popService.postPop(this.popPosted.value).subscribe(() => {
+            this.toastr.success('La création de la pop est une réussite !!');
           this.InitAfterPost.emit();
-        });
+        },
+          () => {
+          this.toastr.error('Une erreur de formulaire ou de serveur est en cause');
+          });
       }
     }
   }

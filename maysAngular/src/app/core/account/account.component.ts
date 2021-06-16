@@ -3,6 +3,7 @@ import {AccountService} from './account.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {confirmPassword} from './confirmPassword';
 import {RightService} from '../pop-components/right.service';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-account',
@@ -15,7 +16,10 @@ export class AccountComponent implements OnInit {
   private fileB64: string;
   role: string;
 
-  constructor(private service: AccountService, private fb: FormBuilder, private r: RightService) {
+  constructor(private service: AccountService,
+              private fb: FormBuilder,
+              private r: RightService,
+              private toastr: ToastrService) {
     this.userInformation = this.fb.group({
         password: ['', Validators.required],
         confirmPassword: ['', Validators.required]
@@ -37,7 +41,7 @@ export class AccountComponent implements OnInit {
   public getInformation(): void {
     this.service.getUserInformation().subscribe(() => {
     }, () => {
-      console.log('Un problème de connexion est survenu');
+      this.toastr.error('Un problème de connexion est survenu');
     });
   }
 
@@ -45,7 +49,7 @@ export class AccountComponent implements OnInit {
     const form = this.userInformation;
     this.service.updateUserInformation(form).subscribe(() => {
     }, () => {
-      console.log('Un problème de connexion est survenu');
+      this.toastr.error('Un problème de connexion est survenu');
     });
   }
 
@@ -78,13 +82,3 @@ export class AccountComponent implements OnInit {
     });
   }
 }
-
-/*
-
-popPost(): void {
-
-  }
-
-
-
- */

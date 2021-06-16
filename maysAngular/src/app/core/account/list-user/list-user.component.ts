@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IUserAdmin} from '../../../model-interface/user-admin';
 import {UserService} from './user.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-user',
@@ -11,7 +12,7 @@ export class ListUserComponent implements OnInit {
   users: Array<IUserAdmin>;
   isPremium = false;
 
-  constructor(private us: UserService) {
+  constructor(private us: UserService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -30,17 +31,17 @@ export class ListUserComponent implements OnInit {
         this.reload();
       },
       () => {
-        console.log('déjà premium');
+        this.toastr.error('déjà premium');
       });
   }
 
   removePremium(id: any): void {
     this.us.removePremium(id).subscribe(() => {
-        console.log('unpremium ok');
+        this.toastr.success('unpremium ok');
         this.reload();
       },
       () => {
-        console.log('déjà unpremium');
+       this.toastr.error('déjà unpremium');
       });
   }
 

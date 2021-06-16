@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RightService} from '../../right.service';
 import {CommentsService} from '../../comments.service';
 import {IGetComment} from '../../../../model-interface/get-comment';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-comments',
@@ -18,7 +19,10 @@ export class CommentsComponent implements OnInit {
   bIsUpdating = false;
   @Output() comEvent: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private fb: FormBuilder, private r: RightService, private coms: CommentsService) {
+  constructor(private fb: FormBuilder,
+              private r: RightService,
+              private coms: CommentsService,
+              private toastr: ToastrService) {
     this.updateForm = this.fb.group({
       content: ['', Validators.required],
       isSpoiler: [false, Validators.required]
@@ -53,10 +57,11 @@ export class CommentsComponent implements OnInit {
     val.postId = this.allComments.id;
 
     this.coms.putComments(this.allComments.id, val).subscribe(() => {
+        this.toastr.success('Modification du commentaire effectué');
         this.comEvent.emit();
       },
       () => {
-        console.log('Erreur lors de la mise à jour du commentaire');
+        this.toastr.error('Erreur lors de la mise à jour du commentaire');
       });
   }
 
@@ -70,9 +75,10 @@ export class CommentsComponent implements OnInit {
 
   deleteComments(): void {
     this.coms.deleteComments(this.allComments.id).subscribe(() => {
+      this.toastr.success('Suppression effectué');
       this.comEvent.emit();
     }, () => {
-      console.log('Erreur lors de la suppression du commentaire');
+      this.toastr.error('Erreur lors de la suppression du commentaire');
     });
   }
 }

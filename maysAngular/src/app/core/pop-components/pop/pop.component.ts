@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../guard/auth-service/auth.service';
 import {PopService} from '../pop.service';
 import {RightService} from '../right.service';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-pop',
@@ -25,7 +26,11 @@ export class PopComponent implements OnInit {
   @Output() readonly InitAfterUpdate = new EventEmitter();
   @Output() readonly InitAfterDelete = new EventEmitter();
 
-  constructor(private auth: AuthService, private popService: PopService, private fb: FormBuilder, private r: RightService) {
+  constructor(private auth: AuthService,
+              private popService: PopService,
+              private fb: FormBuilder,
+              private r: RightService,
+              private toastr: ToastrService) {
     this.popUpdate = fb.group({
       title: ['', [Validators.required]],
       content: [''],
@@ -39,14 +44,17 @@ export class PopComponent implements OnInit {
     this.userName = this.r.getRight().userName;
     this.userRole = this.r.getRight().userRole[0];
     this.auth.isAuth$.subscribe((data) => {
-      if (data) {
-        this.userName = this.r.getRight().userName;
-        this.userRole = this.r.getRight().userRole[0];
-      } else {
-        this.userName = '';
-        this.userRole = '';
-      }
-    });
+        if (data) {
+          this.userName = this.r.getRight().userName;
+          this.userRole = this.r.getRight().userRole[0];
+        } else {
+          this.userName = '';
+          this.userRole = '';
+        }
+      },
+      () => {
+        this.toastr.error('Une erreur de chargement est survenu');
+      });
   }
 
   onShow(): void {
@@ -72,9 +80,10 @@ export class PopComponent implements OnInit {
 
   deletePost(): void {
     this.popService.deletePop(this.pop.id).subscribe(() => {
+      this.toastr.success('La suppression de la pop est une réussite !!');
       this.InitAfterDelete.emit();
     }, () => {
-      console.log('une erreur est survenu lors de la suppression du post');
+      this.toastr.error('une erreur est survenu lors de la suppression du post');
     });
   }
 
@@ -92,15 +101,19 @@ export class PopComponent implements OnInit {
         const str = this.fileB64;
         form.fileContent = str.substring(str.indexOf(',') + 1);
         this.popService.updatePop(this.pop.id, form).subscribe(() => {
-          this.update();
-          this.InitAfterUpdate.emit();
-        });
-      } else {
-        this.popService.updatePop(this.pop.id, this.popUpdate.value).subscribe(() => {
+          this.toastr.success('La mise à jour à été un succès');
           this.update();
           this.InitAfterUpdate.emit();
         }, () => {
-          console.log('une erreur est survenu');
+          this.toastr.error('une erreur est survenu lors de la mise à jour');
+        });
+      } else {
+        this.popService.updatePop(this.pop.id, this.popUpdate.value).subscribe(() => {
+          this.toastr.success('La mise à jour à été un succès');
+          this.update();
+          this.InitAfterUpdate.emit();
+        }, () => {
+          this.toastr.error('une erreur est survenu lors de la mise à jour');
         });
       }
     }

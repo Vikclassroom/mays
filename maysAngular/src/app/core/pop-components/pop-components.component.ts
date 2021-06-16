@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IPop} from '../../model-interface/pop';
 import {PopService} from './pop.service';
 import {AuthService} from '../../guard/auth-service/auth.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-pop-components',
@@ -13,7 +14,7 @@ export class PopComponentsComponent implements OnInit {
   isAuth: boolean = this.auth.isAuthenticated();
   public contentType: string;
 
-  constructor(private popService: PopService, private auth: AuthService) {
+  constructor(private popService: PopService, private auth: AuthService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -26,7 +27,10 @@ export class PopComponentsComponent implements OnInit {
 
   Pops(): void {
     this.popService.getAllPop().subscribe((pop: Array<IPop>) => {
+      this.toastr.success('Chargement réussi');
       this.pops = pop;
+    }, () => {
+      this.toastr.error('Une erreur est survenu lors du chargement du contenu');
     });
   }
 }
