@@ -1,13 +1,13 @@
 <div *ngIf="!bIsUpdating">
   <div>{{getTime()}}</div>
-  <div [formGroup]="updateForm">
+  <div [formGroup]="updateForm" [ngClass]="{'blurHere':allComments.isSpoiler && blur}">
     <div>{{allComments.content}}</div>
-    <div>{{allComments.isSpoiler}}</div>
     <div>
       <button *ngIf="userName === allComments.author.userName" class="btn" (click)="updateEnable()">update</button>
       <button *ngIf="userName === allComments.author.userName" class="btn" (click)="deleteComments()">delete</button>
     </div>
   </div>
+  <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="allComments.isSpoiler && blur">spoiler</button>
 </div>
 
 <div *ngIf="bIsUpdating" [formGroup]="updateForm">

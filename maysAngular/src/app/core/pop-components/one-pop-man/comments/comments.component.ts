@@ -18,6 +18,7 @@ export class CommentsComponent implements OnInit {
   isAdmin: boolean;
   bIsUpdating = false;
   @Output() comEvent: EventEmitter<void> = new EventEmitter<void>();
+  blur = true;
 
   constructor(private fb: FormBuilder,
               private r: RightService,
@@ -67,6 +68,10 @@ export class CommentsComponent implements OnInit {
 
   getDateTime(): string {
     return moment().format();
+  }
+
+  onShow(): void {
+    this.blur = false;
   }
 
   updateEnable(): void {
