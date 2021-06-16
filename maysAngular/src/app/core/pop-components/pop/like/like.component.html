@@ -1,8 +1,3 @@
 <div class="box-like px-3 py-1">
-    <span>{{numberLike}} </span><label (click)="onChangeLike()" class="like-btn unliked" [ngClass]="{liked:isLiked}"></label>
+    <p class="mb-0 mr-2">{{numberLike}}</p><div (click)="onChangeLike()" class="like-btn" [ngClass]="{liked:isLiked, unliked:!isLiked}"></div>
 </div>
-<!--
-<div class="box-like px-3 py-1">
-  <p class="mb-0 mr-2">361</p>
-  <div class="like-btn unliked"></div>
-</div>-->

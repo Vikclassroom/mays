@@ -27,8 +27,8 @@
   </div>
   <app-like [postId]="pop.id" [isLiked]="pop.isLiked" [numberLike]="pop.countLikes"></app-like>
   <div class="box-comments px-3 py-1">
-    <p class="text-center"><span>{{pop.countComment }}</span><a routerLinkActive="active" [routerLink]="['core/one-pop',pop.id]"><i
-      class="fas fa-comment"></i></a></p>
+    <p class="mb-0 mr-2">{{pop.countComment }}</p><a routerLinkActive="active" [routerLink]="['core/one-pop',pop.id]"><i
+      class="fas fa-comment"></i></a>
   </div>
 </div>
 
