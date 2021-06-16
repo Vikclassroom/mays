@@ -21,6 +21,9 @@ import { OnePopManComponent } from './core/pop-components/one-pop-man/one-pop-ma
 import { PremiumComponent } from './core/premium/premium.component';
 import { ListUserComponent } from './core/account/list-user/list-user.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,9 @@ import { ListUserComponent } from './core/account/list-user/list-user.component'
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
