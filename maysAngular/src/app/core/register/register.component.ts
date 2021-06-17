@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../service-shared/auth.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
+import {RightService} from '../../service-shared/right.service';
 
 @Component({
   selector: 'app-register',
@@ -15,6 +16,7 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private router: Router,
+              private r: RightService,
               private toastr: ToastrService) {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -34,6 +36,7 @@ export class RegisterComponent implements OnInit {
         .subscribe(
           () => {
             this.toastr.success('Votre compte à été créé avec succès');
+            this.r.refreshAvatar();
             this.router.navigateByUrl('/');
           },
           () => {
