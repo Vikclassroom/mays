@@ -15,8 +15,6 @@ import {ToastrService} from 'ngx-toastr';
 export class PopComponent implements OnInit {
   @Input() pop: IPop;
   userName: string;
-  isAdmin: boolean;
-  isPremium: boolean;
   blur = true;
   time: string;
   title: string;
@@ -43,15 +41,11 @@ export class PopComponent implements OnInit {
   ngOnInit(): void {
     this.datePosted();
     this.userName = this.r.getRight().userName;
-    this.isAdmin = this.r.isAdmin();
-    this.isPremium = this.pop.author.isPremium;
     this.auth.isAuth$.subscribe((data) => {
         if (data) {
           this.userName = this.r.getRight().userName;
-          this.isAdmin = this.r.isAdmin();
         } else {
           this.userName = '';
-          this.isAdmin = false;
         }
       },
       () => {
@@ -137,5 +131,13 @@ export class PopComponent implements OnInit {
       reader.onload = () => resolve(reader.result as string);
       reader.onerror = error => reject(error);
     });
+  }
+
+  isAdmin(): boolean {
+    return this.r.isAdmin();
+  }
+
+  isPremium(): boolean {
+    return this.r.isPremium();
   }
 }

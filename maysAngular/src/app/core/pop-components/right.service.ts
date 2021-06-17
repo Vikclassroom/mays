@@ -12,13 +12,21 @@ export class RightService {
   }
 
   getRight(): IRight {
-    const token = localStorage.getItem('token');
-    const decoded = jwt_decode<IToken>(token);
-    return {
-      userName: decoded.Username,
-      userRole: decoded.role,
-      avatar: decoded.Avatar
-    };
+    if(localStorage.hasOwnProperty('token')){
+      const token = localStorage.getItem('token');
+      const decoded = jwt_decode<IToken>(token);
+      return {
+        userName: decoded.Username,
+        userRole: decoded.role,
+        avatar: decoded.Avatar
+      };
+    } else {
+      return {
+        userName: '',
+        userRole: '',
+        avatar: ''
+      };
+    }
   }
 
   isAdmin(): boolean {

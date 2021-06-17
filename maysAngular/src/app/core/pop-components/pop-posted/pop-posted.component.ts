@@ -15,7 +15,6 @@ export class PopPostedComponent implements OnInit {
   connected: boolean = this.auth.isAuthenticated();
   @Output() readonly InitAfterPost = new EventEmitter();
   private fileB64: string;
-  public isAdmin: boolean;
 
   constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder, private toastr: ToastrService, private r: RightService) {
     this.popPosted = fb.group({
@@ -27,7 +26,11 @@ export class PopPostedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isAdmin = this.r.isAdmin();
+    
+  }
+
+  isPremium(): boolean {
+    return this.r.isPremium();
   }
 
   popPost(): void {

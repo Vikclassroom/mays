@@ -30,7 +30,6 @@ export class OnePopManComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.isPremium = this.onePop.author.isPremium;
     this.getOnePop(this.id);
     this.getOnePopComs(this.id);
   }
@@ -38,6 +37,7 @@ export class OnePopManComponent implements OnInit {
   getOnePop(id: string): void {
     this.pops.getPopById(id).subscribe((data) => {
       this.onePop = data;
+      this.isPremium = this.onePop.author.isPremium;
       this.loaded = true;
       this.datePosted();
     });

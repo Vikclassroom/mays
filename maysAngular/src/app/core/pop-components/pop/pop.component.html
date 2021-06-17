@@ -28,7 +28,7 @@
 
   <div>
     <a href="#" *ngIf="userName === pop.author.userName" (click)="update()" class="mr-3"><i class="fas fa-edit"></i> Modifier</a>
-    <a href="#" *ngIf="userName === pop.author.userName || isAdmin" (click)="deletePost()"><i class="fas fa-trash"></i> Supprimer</a>
+    <a href="#" *ngIf="userName === pop.author.userName || isAdmin()" (click)="deletePost()"><i class="fas fa-trash"></i> Supprimer</a>
   </div>
 </div>
 
@@ -45,8 +45,8 @@
     </div>
     <div class="form-group">
       <label for="fileContent">Media</label>
-      <input class="form-control-file" formControlName="fileContent" type="file" id="fileContent" name="fileContent"
-             (change)="onTheFly($event)">
+      <input *ngIf="!isPremium()" class="form-control-file" formControlName="fileContent" type="file" id="fileContent" name="fileContent" (change)="onTheFly($event)" accept="image/*">
+      <input *ngIf="isPremium()" class="form-control-file" formControlName="fileContent" type="file" id="fileContent" name="fileContent" (change)="onTheFly($event)" accept="image/*,.mp3,.wav,.mp4,.webm">
     </div>
     <div class="form-group">
       <div class="form-check">
