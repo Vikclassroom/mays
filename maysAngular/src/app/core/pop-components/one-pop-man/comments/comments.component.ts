@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import * as moment from 'moment';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {RightService} from '../../right.service';
+import {RightService} from '../../../../service-shared/right.service';
 import {CommentsService} from '../../comments.service';
 import {IGetComment} from '../../../../model-interface/get-comment';
 import {ToastrService} from 'ngx-toastr';

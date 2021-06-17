@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {AccountService} from './account.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {confirmPassword} from './confirmPassword';
-import {RightService} from '../pop-components/right.service';
+import {RightService} from '../../service-shared/right.service';
 import {ToastrService} from 'ngx-toastr';
-import {AuthService} from '../../guard/auth-service/auth.service';
+import {AuthService} from '../../service-shared/auth.service';
 
 @Component({
   selector: 'app-account',

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LikeService} from './like.service';
-import {AuthService} from '../../../../guard/auth-service/auth.service';
+import {AuthService} from '../../../../service-shared/auth.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {AuthService} from '../../guard/auth-service/auth.service';
+import {AuthService} from '../../service-shared/auth.service';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import {IUserAccount} from '../../model-interface/user-account';

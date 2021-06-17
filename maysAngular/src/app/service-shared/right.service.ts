@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import jwt_decode from 'jwt-decode';
-import {IToken} from '../../model-interface/token';
-import {IRight} from '../../model-interface/right';
+import {IToken} from '../model-interface/token';
+import {IRight} from '../model-interface/right';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class RightService {
   }
 
   getRight(): IRight {
-    if(localStorage.hasOwnProperty('token')){
+    if (localStorage.hasOwnProperty('token')){
       const token = localStorage.getItem('token');
       const decoded = jwt_decode<IToken>(token);
       return {

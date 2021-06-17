@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {IUser} from '../../model-interface/user';
+import {IUser} from '../model-interface/user';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import {environment} from '../../../environments/environment';
-import {IRegister} from '../../model-interface/register';
+import {environment} from '../../environments/environment';
+import {IRegister} from '../model-interface/register';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {Router} from '@angular/router';
 

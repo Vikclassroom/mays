@@ -2,9 +2,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IPop} from '../../../model-interface/pop';
 import * as moment from 'moment';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../../../guard/auth-service/auth.service';
+import {AuthService} from '../../../service-shared/auth.service';
 import {PopService} from '../pop.service';
-import {RightService} from '../right.service';
+import {RightService} from '../../../service-shared/right.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../guard/auth-service/auth.service';
-import {RightService} from '../core/pop-components/right.service';
+import {AuthService} from '../service-shared/auth.service';
+import {RightService} from '../service-shared/right.service';
 
 @Component({
   selector: 'app-nav-bar',

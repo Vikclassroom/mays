@@ -1,8 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {AuthService} from '../../../guard/auth-service/auth.service';
+import {AuthService} from '../../../service-shared/auth.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PopService} from '../pop.service';
-import {RightService} from '../right.service';
+import {RightService} from '../../../service-shared/right.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
@@ -16,7 +16,11 @@ export class PopPostedComponent implements OnInit {
   @Output() readonly InitAfterPost = new EventEmitter();
   private fileB64: string;
 
-  constructor(private popService: PopService, private auth: AuthService, private fb: FormBuilder, private toastr: ToastrService, private r: RightService) {
+  constructor(private popService: PopService,
+              private auth: AuthService,
+              private fb: FormBuilder,
+              private toastr: ToastrService,
+              private r: RightService) {
     this.popPosted = fb.group({
       title: ['', [Validators.required]],
       content: [''],
@@ -26,7 +30,7 @@ export class PopPostedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
   isPremium(): boolean {
@@ -54,7 +58,7 @@ export class PopPostedComponent implements OnInit {
       } else {
         this.popService.postPop(this.popPosted.value).subscribe(() => {
             this.toastr.success('La création de la pop est une réussite !!');
-          this.InitAfterPost.emit();
+            this.InitAfterPost.emit();
         },
           () => {
           this.toastr.error('Une erreur de formulaire ou de serveur est en cause');

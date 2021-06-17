@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IPop} from '../../model-interface/pop';
 import {PopService} from './pop.service';
-import {AuthService} from '../../guard/auth-service/auth.service';
+import {AuthService} from '../../service-shared/auth.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
