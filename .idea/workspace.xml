@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="service shared">
+    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="audio fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" afterDir="false" />
     </list>
@@ -79,7 +79,7 @@
       <workItem from="1623492375853" duration="20087000" />
       <workItem from="1623538439624" duration="8190000" />
       <workItem from="1623575425720" duration="25967000" />
-      <workItem from="1623943721521" duration="1882000" />
+      <workItem from="1623943721521" duration="2453000" />
     </task>
     <task id="LOCAL-00001" summary="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP">
       <created>1623324875583</created>
@@ -109,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623944358651</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="audio fix">
+      <created>1623945741422</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623945741422</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +140,7 @@
     <MESSAGE value="did stuff like you" />
     <MESSAGE value="did stuff" />
     <MESSAGE value="service shared" />
-    <option name="LAST_COMMIT_MESSAGE" value="service shared" />
+    <MESSAGE value="audio fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="audio fix" />
   </component>
 </project>

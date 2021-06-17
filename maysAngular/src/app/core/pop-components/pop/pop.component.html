@@ -14,7 +14,7 @@
       <p>{{pop.content}}</p>
       <p>{{pop.fileName}}</p>
       <img *ngIf="pop.fileType == 'image'" src="http://localhost:5000/assets/{{pop.filePath}}" alt="picture">
-      <video *ngIf="pop.fileType == 'video'" src="http://localhost:5000/assets/{{pop.filePath}}"></video>
+      <video controls="controls" controlsList="nodownload" *ngIf="pop.fileType == 'video'" src="http://localhost:5000/assets/{{pop.filePath}}"></video>
       <audio controls="controls" controlsList="nodownload" *ngIf="pop.fileType == 'audio'">
         <source src="http://localhost:5000/assets/{{pop.filePath}}">
       </audio>
