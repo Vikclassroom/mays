@@ -3,7 +3,7 @@
     <img src="./assets/build/8f0ca4a001b8fa873d975ab3168c082c.svg" width="70" alt="Logo MAŸS">
   </a>
 
-  <div class="navbar-nav ml-auto" *ngIf="isLogged()">
+  <div class="navbar-nav ml-auto" *ngIf="isLoggedUpdate()">
     <div class="pseudo">
       <img *ngIf="avatar != ''" src="http://localhost:5000/avatars/{{avatar}}" alt="profilPicture">
       <img *ngIf="avatar == ''" src="http://localhost:4200/assets/build/defaultuser.png" alt="profilPicture">

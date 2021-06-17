@@ -15,7 +15,6 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isLogged();
     this.userInfoNavBar();
   }
 
@@ -24,6 +23,11 @@ export class NavBarComponent implements OnInit {
   }
 
   isLogged(): boolean {
+    return this.auth.isAuthenticated();
+  }
+
+  isLoggedUpdate(): boolean {
+    this.userInfoNavBar();
     return this.auth.isAuthenticated();
   }
 
