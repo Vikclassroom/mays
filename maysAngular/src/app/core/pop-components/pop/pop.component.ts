@@ -16,6 +16,7 @@ export class PopComponent implements OnInit {
   @Input() pop: IPop;
   userName: string;
   isAdmin: boolean;
+  isPremium: boolean;
   blur = true;
   time: string;
   title: string;
@@ -43,6 +44,7 @@ export class PopComponent implements OnInit {
     this.datePosted();
     this.userName = this.r.getRight().userName;
     this.isAdmin = this.r.isAdmin();
+    this.isPremium = this.pop.author.isPremium;
     this.auth.isAuth$.subscribe((data) => {
         if (data) {
           this.userName = this.r.getRight().userName;
@@ -127,6 +129,7 @@ export class PopComponent implements OnInit {
   }
 
   // cette dupplication de code aurait pu être l'oeuvre d'un service à part entière
+
   toBase64(file): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       const reader = new FileReader();

@@ -5,7 +5,7 @@
     </div>
 
     <div class="post mb-5 p-4" *ngIf="loaded">
-      <a href="#" class="pseudo premium">
+      <a href="#" class="pseudo" [ngClass]="{premium: isPremium}">
         <img src="http://localhost:5000/avatars/{{onePop.author.avatar}}"
              alt="profilPicture">{{onePop.author.userName}}
       </a> · <small class="text-black-50" title="{{title}}">{{time}}</small>

@@ -5,7 +5,7 @@ import {PopService} from '../pop.service';
 import {IPop} from '../../../model-interface/pop';
 import * as moment from 'moment';
 import {IGetComment} from '../../../model-interface/get-comment';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-one-pop-man',
@@ -20,6 +20,7 @@ export class OnePopManComponent implements OnInit {
   blur = true;
   title: string;
   time: string;
+  isPremium: boolean;
 
   constructor(private route: ActivatedRoute,
               private coms: CommentsService,
@@ -29,6 +30,7 @@ export class OnePopManComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
+    this.isPremium = this.onePop.author.isPremium;
     this.getOnePop(this.id);
     this.getOnePopComs(this.id);
   }
