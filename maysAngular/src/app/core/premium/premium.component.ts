@@ -35,7 +35,7 @@ export class PremiumComponent implements OnInit {
   }
 
   submit(): void {
-    if (this.verifiyStringCard() === null) {
+    if (this.verifiyStringCard() !== null) {
       const cardInfo = this.creditCard.value;
       Object.assign(cardInfo, {cardNumber: this.verifiyStringCard()});
       this.premiumService.subscribe(this.creditCard.value).subscribe(
