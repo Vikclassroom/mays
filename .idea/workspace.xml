@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="service shared">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/one-pop-man/comments/comments.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-components.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-components.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-posted/pop-posted.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop-posted/pop-posted.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/like/like.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/right.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/service-shared/right.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/guard/auth-service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/service-shared/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/guard/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/guard/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/nav-bar/nav-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/nav-bar/nav-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +38,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Users\Max\Desktop\mays\mays-angular\maysAngular\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -90,7 +79,7 @@
       <workItem from="1623492375853" duration="20087000" />
       <workItem from="1623538439624" duration="8190000" />
       <workItem from="1623575425720" duration="25967000" />
-      <workItem from="1623943721521" duration="629000" />
+      <workItem from="1623943721521" duration="1882000" />
     </task>
     <task id="LOCAL-00001" summary="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP">
       <created>1623324875583</created>
@@ -113,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623606856074</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="service shared">
+      <created>1623944358651</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1623944358651</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,7 +15,9 @@
       <p>{{pop.fileName}}</p>
       <img *ngIf="pop.fileType == 'image'" src="http://localhost:5000/assets/{{pop.filePath}}" alt="picture">
       <video *ngIf="pop.fileType == 'video'" src="http://localhost:5000/assets/{{pop.filePath}}"></video>
-      <audio *ngIf="pop.fileType == 'audio'" src="http://localhost:5000/assets/{{pop.filePath}}"></audio>
+      <audio controls="controls" controlsList="nodownload" *ngIf="pop.fileType == 'audio'">
+        <source src="http://localhost:5000/assets/{{pop.filePath}}">
+      </audio>
     </div>
     <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="pop.isSpoiler && blur">Afficher le spoiler
     </button>
