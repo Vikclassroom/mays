@@ -17,7 +17,7 @@ export class RightService {
     return {
       userName: decoded.Username,
       userRole: decoded.role,
-      avatar: decoded.avatar
+      avatar: decoded.Avatar
     };
   }
 
