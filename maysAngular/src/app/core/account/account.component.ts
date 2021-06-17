@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {confirmPassword} from './confirmPassword';
 import {RightService} from '../pop-components/right.service';
 import {ToastrService} from 'ngx-toastr';
+import {AuthService} from '../../guard/auth-service/auth.service';
 
 @Component({
   selector: 'app-account',
@@ -19,7 +20,8 @@ export class AccountComponent implements OnInit {
   constructor(private service: AccountService,
               private fb: FormBuilder,
               private r: RightService,
-              private toastr: ToastrService) {
+              private toastr: ToastrService,
+              private auth: AuthService) {
     this.userInformation = this.fb.group({
         oldPassword: ['', Validators.required],
         newPassword: ['', Validators.required],
@@ -49,6 +51,8 @@ export class AccountComponent implements OnInit {
   public updatePassword(): void {
     const form = this.userInformation.value;
     this.service.updateUserInformation(form).subscribe(() => {
+      this.toastr.success('Le mot de passe à été mis à jour');
+      this.auth.logout();
     }, () => {
       this.toastr.error('Un problème de connexion est survenu');
     });

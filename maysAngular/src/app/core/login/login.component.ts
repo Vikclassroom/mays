@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../../guard/auth-service/auth.service';
@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
             this.toastr.error('Erreur de connexion');
           }
         );
+    } else {
+      this.toastr.error('Une erreur de mot de passe ou d\'utilisateur est en cause');
     }
-    this.toastr.error('Une erreur de mot de passe ou d\'utilisateur est en cause');
   }
 }
