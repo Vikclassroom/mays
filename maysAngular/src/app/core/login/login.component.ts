@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../../service-shared/auth.service';
 import {ToastrService} from 'ngx-toastr';
+import {RightService} from '../../service-shared/right.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private router: Router,
+              private r: RightService,
               private toastr: ToastrService) {
 
     this.form = this.fb.group({
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
         .subscribe(
           () => {
             this.toastr.success('Succès à la connexion');
+            this.r.refreshAvatar();
             this.router.navigateByUrl('/');
           },
           () => {

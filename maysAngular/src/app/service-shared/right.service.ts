@@ -12,11 +12,7 @@ export class RightService {
   private timestamp: string = Date.now().toString();
 
   constructor() {
-    if (localStorage.hasOwnProperty('token')){
-      const token = localStorage.getItem('token');
-      const decoded = jwt_decode<IToken>(token);
-      this.avatar = decoded.Avatar;
-    }
+    this.refreshAvatar();
   }
 
   getRight(): IRight {
@@ -60,9 +56,25 @@ export class RightService {
   }
 
   setAvatar(extension: string): void {
-    let array = this.avatar.split('.');
-    array[array.length-1] = extension;
-    this.avatar = array.join('.');
+    if(this.avatar != ""){
+      let array = this.avatar.split('.');
+      array[array.length-1] = extension;
+      this.avatar = array.join('.');
+    }
     this.timestamp = Date.now().toString();
+  }
+
+  issetAvatar(): boolean {
+    return this.avatar != "";
+  }
+
+  refreshAvatar(): void {
+    if (localStorage.hasOwnProperty('token')){
+      const token = localStorage.getItem('token');
+      const decoded = jwt_decode<IToken>(token);
+      this.avatar = decoded.Avatar;
+    } else {
+      this.avatar = "";
+    }
   }
 }

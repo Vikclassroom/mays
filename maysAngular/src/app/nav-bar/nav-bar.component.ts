@@ -41,4 +41,8 @@ export class NavBarComponent implements OnInit {
   getAvatar(): string {
     return this.r.getAvatar();
   }
+
+  issetAvatar(): boolean {
+    return this.r.issetAvatar();
+  }
 }
