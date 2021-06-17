@@ -56,16 +56,16 @@ export class RightService {
   }
 
   setAvatar(extension: string): void {
-    if(this.avatar != ""){
+    if (this.avatar !== ''){
       let array = this.avatar.split('.');
-      array[array.length-1] = extension;
+      array[array.length - 1] = extension;
       this.avatar = array.join('.');
     }
     this.timestamp = Date.now().toString();
   }
 
   issetAvatar(): boolean {
-    return this.avatar != "";
+    return this.avatar !== '';
   }
 
   refreshAvatar(): void {
@@ -74,7 +74,7 @@ export class RightService {
       const decoded = jwt_decode<IToken>(token);
       this.avatar = decoded.Avatar;
     } else {
-      this.avatar = "";
+      this.avatar = '';
     }
   }
 }

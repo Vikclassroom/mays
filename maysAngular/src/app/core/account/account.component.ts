@@ -69,9 +69,8 @@ export class AccountComponent implements OnInit {
       const str = this.fileB64;
       Object.assign(form, {fileContent: str.substring(str.indexOf(',') + 1)});
       this.service.updateUserAvatar(form).subscribe(() => {
-      this.toastr.success('Le mot de passe a été mis à jour');
         this.toastr.success('Avatar uploadé avec succès !');
-        let ext = name.split(".").pop();
+        let ext = name.split('.').pop();
         this.r.setAvatar(ext);
       }, () => {
         this.toastr.error('Un problème de connexion est survenu');
