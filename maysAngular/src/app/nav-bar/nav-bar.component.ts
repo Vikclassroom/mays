@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../guard/auth-service/auth.service';
+import {RightService} from '../core/pop-components/right.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,10 +8,15 @@ import {AuthService} from '../guard/auth-service/auth.service';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  constructor(private auth: AuthService) { }
+  userName: string;
+  avatar: string;
+
+  constructor(private auth: AuthService, private r: RightService) {
+  }
 
   ngOnInit(): void {
     this.isLogged();
+    this.userInfoNavBar();
   }
 
   logout(): void {
@@ -19,5 +25,12 @@ export class NavBarComponent implements OnInit {
 
   isLogged(): boolean {
     return this.auth.isAuthenticated();
+  }
+
+  userInfoNavBar(): void {
+    if (this.isLogged()) {
+      this.userName = this.r.getRight().userName;
+      this.avatar = this.r.getAvatar();
+    }
   }
 }

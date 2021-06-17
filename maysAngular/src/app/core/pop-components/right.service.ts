@@ -16,7 +16,8 @@ export class RightService {
     const decoded = jwt_decode<IToken>(token);
     return {
       userName: decoded.Username,
-      userRole: decoded.role
+      userRole: decoded.role,
+      avatar: decoded.avatar
     };
   }
 
@@ -36,5 +37,9 @@ export class RightService {
       }
     }
     return false;
+  }
+
+  getAvatar(): string {
+    return this.getRight().avatar;
   }
 }
