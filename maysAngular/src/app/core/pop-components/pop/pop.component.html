@@ -1,5 +1,5 @@
 <div class="post mb-5 p-4" *ngIf="!bIsUpdating">
-  <a href="#" [ngClass]="{premium : isPremium}" class="pseudo">
+  <a href="#" [ngClass]="{premium : pop.author.isPremium}" class="pseudo">
     <img *ngIf="pop.author.avatar !== null" src="http://localhost:5000/avatars/{{pop.author.avatar}}"
          alt="profilPicture">
     <img *ngIf="pop.author.avatar === null" src="http://localhost:4200/assets/build/defaultuser.png"
