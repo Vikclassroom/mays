@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="video fix">
+    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="clean">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/nav-bar/nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/nav-bar/nav-bar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maysAngular/src/app/service-shared/right.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/service-shared/right.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +81,7 @@
       <workItem from="1623492375853" duration="20087000" />
       <workItem from="1623538439624" duration="8190000" />
       <workItem from="1623575425720" duration="25967000" />
-      <workItem from="1623943721521" duration="6035000" />
+      <workItem from="1623943721521" duration="7163000" />
     </task>
     <task id="LOCAL-00001" summary="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP">
       <created>1623324875583</created>
@@ -125,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623946398269</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="clean">
+      <created>1623954301738</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623954301738</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +158,7 @@
     <MESSAGE value="service shared" />
     <MESSAGE value="audio fix" />
     <MESSAGE value="video fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="video fix" />
+    <MESSAGE value="clean" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
 </project>

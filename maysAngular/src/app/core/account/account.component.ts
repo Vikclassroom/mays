@@ -38,6 +38,7 @@ export class AccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInformation();
+    console.log(this.r.isAdmin());
     this.isAdmin = this.r.isAdmin();
   }
 

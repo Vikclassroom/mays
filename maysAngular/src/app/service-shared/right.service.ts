@@ -16,7 +16,7 @@ export class RightService {
   }
 
   getRight(): IRight {
-    if (localStorage.hasOwnProperty('token')){
+    if (localStorage.hasOwnProperty('token')) {
       const token = localStorage.getItem('token');
       const decoded = jwt_decode<IToken>(token);
       return {
@@ -34,17 +34,15 @@ export class RightService {
   }
 
   isAdmin(): boolean {
-    for (const right of this.getRight().userRole){
-      if (right === 'admin'){
-        return true;
-      }
+    if (this.getRight().userRole === 'admin') {
+      return true;
     }
     return false;
   }
 
   isPremium(): boolean {
-    for (const right of this.getRight().userRole){
-      if (right === 'admin' || right === 'premium'){
+    for (const right of this.getRight().userRole) {
+      if (right === 'admin' || right === 'premium') {
         return true;
       }
     }
@@ -56,7 +54,7 @@ export class RightService {
   }
 
   setAvatar(extension: string): void {
-    if (this.avatar !== ''){
+    if (this.avatar !== '') {
       let array = this.avatar.split('.');
       array[array.length - 1] = extension;
       this.avatar = array.join('.');
@@ -69,7 +67,7 @@ export class RightService {
   }
 
   refreshAvatar(): void {
-    if (localStorage.hasOwnProperty('token')){
+    if (localStorage.hasOwnProperty('token')) {
       const token = localStorage.getItem('token');
       const decoded = jwt_decode<IToken>(token);
       this.avatar = decoded.Avatar;
