@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="clean">
+    <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="debug admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/account.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/pop-components/pop/pop.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/service-shared/right.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/service-shared/right.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +79,7 @@
       <workItem from="1623492375853" duration="20087000" />
       <workItem from="1623538439624" duration="8190000" />
       <workItem from="1623575425720" duration="25967000" />
-      <workItem from="1623943721521" duration="7163000" />
+      <workItem from="1623943721521" duration="7974000" />
     </task>
     <task id="LOCAL-00001" summary="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP">
       <created>1623324875583</created>
@@ -132,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623954301738</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="debug admin">
+      <created>1623955278823</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1623955278823</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +164,7 @@
     <MESSAGE value="audio fix" />
     <MESSAGE value="video fix" />
     <MESSAGE value="clean" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean" />
+    <MESSAGE value="debug admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug admin" />
   </component>
 </project>
