@@ -5,8 +5,8 @@
 
   <div class="navbar-nav ml-auto" *ngIf="isLoggedUpdate()">
     <div class="pseudo">
-      <img *ngIf="avatar != ''" src="http://localhost:5000/avatars/{{avatar}}" alt="profilPicture">
-      <img *ngIf="avatar == ''" src="http://localhost:4200/assets/build/defaultuser.png" alt="profilPicture">
+      <img *ngIf="getAvatar() != ''" src="http://localhost:5000/avatars/{{getAvatar()}}" alt="profilPicture">
+      <img *ngIf="getAvatar() == ''" src="http://localhost:4200/assets/build/defaultuser.png" alt="profilPicture">
       <a routerLinkActive="active" routerLink="core/account" class="nav-link" *ngIf="isLogged()">{{userName}}</a>
     </div>
   </div>
