@@ -17,10 +17,10 @@
           <p>{{onePop.fileName}}</p>
           <img *ngIf="onePop.fileType == 'image'" src="http://localhost:5000/assets/{{onePop.filePath}}"
                alt="picture">
-          <video *ngIf="onePop.fileType == 'video'"
-                 src="http://localhost:5000/assets/{{onePop.filePath}}"></video>
-          <audio *ngIf="onePop.fileType == 'audio'"
-                 src="http://localhost:5000/assets/{{onePop.filePath}}"></audio>
+          <video controls="controls" controlsList="nodownload" *ngIf="onePop.fileType == 'video'" src="http://localhost:5000/assets/{{onePop.filePath}}"></video>
+          <audio controls="controls" controlsList="nodownload" *ngIf="onePop.fileType == 'audio'">
+            <source src="http://localhost:5000/assets/{{onePop.filePath}}">
+          </audio>
         </div>
         <button (click)="onShow()" class="btn btn-dark overPicture" *ngIf="onePop.isSpoiler && blur">Afficher le
           spoiler
