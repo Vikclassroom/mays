@@ -10,7 +10,7 @@ npm install
 ng serve    
 ```
 
-Aller sur un nvaigateur et ouvrir une page localhost:4200
+Aller sur un navigateur et ouvrir une page localhost:4200
 
 ## projet MAYS : 
 

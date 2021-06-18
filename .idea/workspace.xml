@@ -4,6 +4,7 @@
     <list default="true" id="abff400e-0507-43fb-9507-6ea801d1dd44" name="Default Changelist" comment="debug admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maysAngular/src/app/core/account/list-user/list-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/maysAngular/src/app/core/account/list-user/list-user.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +81,7 @@
       <workItem from="1623538439624" duration="8190000" />
       <workItem from="1623575425720" duration="25967000" />
       <workItem from="1623943721521" duration="7974000" />
+      <workItem from="1624036547443" duration="393000" />
     </task>
     <task id="LOCAL-00001" summary="(peut être devoir le revert suivant comment à cause de plein de fichier non commité laissé lors de la désinstallation de ngx-toastr)&#10;&#10;Commentaire - WIP">
       <created>1623324875583</created>
