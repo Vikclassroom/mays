@@ -7,7 +7,7 @@ Pour lancer le projet, lancez le backend (mays-dotnet), puis les commandes suiva
 ```bash
 cd maysAngular
 npm install
-ng serve    
+ng serve
 ```
 
 Aller sur un navigateur et ouvrir une page localhost:4200
